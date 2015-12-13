@@ -1,5 +1,4 @@
 String.prototype.ucfirst = require('./lib/helpers/ucfirst');
-Array.prototype.pushUnique = require('./lib/helpers/push-unique');
 var merge_options = require('./lib/helpers/merge-options');
 
 exports.install = function(Vue, globalOptions) {
@@ -45,7 +44,6 @@ Vue.use(require('vue-resource'));
         }
       }
 
-      console.log(this.requiredIfs);
     },
     ready: function() {
 
@@ -57,7 +55,7 @@ Vue.use(require('vue-resource'));
       this.$watch("form", function() {
         console.log("changed");
       },{deep:true});
-
+console.log(this.errors);
     },
     data: function() {
       return {
@@ -90,7 +88,8 @@ Vue.use(require('vue-resource'));
     methods: {
       submit:require('./lib/methods/submit'),
       formData:require('./lib/methods/form-data'),
-      getField:require('./lib/methods/get-field')
+      getField:require('./lib/methods/get-field'),
+      showAllErrors:require('./lib/methods/show-all-errors')
 }
 
 }
