@@ -1,0 +1,8 @@
+<div class="VF VF-Submit row">
+  <div class="col-md-12">
+  <slot name="beforeSubmitHook">
+  <button type="submit" class="VF-Submit btn btn-primary pull-right {{disabled?'disabled':''}}">Submit</button>
+  <slot name="afterSubmitHook">
+  </div>
+</div>
+

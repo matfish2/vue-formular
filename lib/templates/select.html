@@ -1,0 +1,4 @@
+ <select v-model="value" multiple={{multiple}} class="form-control" id="{{name}}">
+   <option v-if="!select2 && !multiple" value="">{{placeholder}}</option>
+   <option v-for="item in items" value="{{item.value}}">{{item.text}}</option>
+ </select>

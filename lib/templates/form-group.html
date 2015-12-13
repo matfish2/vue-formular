@@ -1,0 +1,13 @@
+ <div v-show="shouldShow" class="VF VF-Field VF-Field--Input VF-Field--[[fieldType]] form-group" :style="formGroupStyle" :class="validationClasses">
+
+   <label v-if="label" class="VF-Field__label control-label" :class="$parent.labelClass" for="{{name}}">{{{label}}}</label>
+
+ <div class="VF-Field__wrapper" :style="$parent.elemDisplay" :class="$parent.fieldClass">
+  <slot name="beforeField"></slot>
+  [[field]]
+  <span v-if="hasFeedback" class="glyphicon glyphicon-{{feedbackIcon}} form-control-feedback" :style="feedbackStyle" aria-hidden="true"></span>
+  <span v-if="validationError" class="VF-ValidationError help-block">{{validationError}}</span>
+  <slot name="afterField"></slot>
+</div>
+
+</div>
