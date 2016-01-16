@@ -68,8 +68,8 @@ Numeric and email fields will be validated accordingly.
    uses [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker).
    the `value` should be passed as a string, matching the 'YYYY-MM-DD' format, or as a moment object. The date will be sent to the server in the following format: `2005-12-11T22:00:00.000Z`
 
-   `range` `boolean` `optional` pick a range of dates. the `value` prop should be passed as an object with `start` and `end` properties. A similar object is sent to the server
-   `format` `string` `optional` Date presentation (using `moment`). Default: 'DD/MM/YYYY'.
+   * `range` `boolean` `optional` pick a range of dates. the `value` prop should be passed as an object with `start` and `end` properties. A similar object is sent to the server
+   * `format` `string` `optional` Date presentation (using `moment`). Default: 'DD/MM/YYYY'.
 
 * `vf-select` - select list
 
