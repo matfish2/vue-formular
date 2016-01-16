@@ -123,17 +123,17 @@ Supported rules:
 
 * `required` `boolean` required fields will be given a unique class you can use to mark the field as required. E.g:
 
-      .VF-Field--required label {
-        position: relative;
-      }
+        .VF-Field--required label {
+          position: relative;
+        }
 
-      .VF-Field--required>label:before {
-      content:"*";
-      font-size: 20px;
-      color:red;
-      position: absolute;
-      left:-15px;
-      }
+        .VF-Field--required>label:before {
+        content:"*";
+        font-size: 20px;
+        color:red;
+        position: absolute;
+        left:-15px;
+        }
 
 * `requiredIf` `string` - make the field required only if another field was filled with a value (typically a select or checkbox).
 The field would only display when required. To set specific values for requiring the field use the following format: `otherField:val1, val2`
