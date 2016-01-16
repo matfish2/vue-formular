@@ -1,7 +1,5 @@
 # Vue Formular
 
-[![Build Status](https://travis-ci.org/matfish2/vue-formular.svg)](https://travis-ci.org/matfish2/vue-formular)
-
 This vue.js package offers a comperhensive solution to HTML form management, including presentation and validation.
 The presentation is based on [Bootstrap's form component](http://getbootstrap.com/css/#forms).
 
@@ -11,7 +9,7 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
     - [Fields](#fields)
     - [Validation](#validation)
     - [Events](#events)
-- [Options](#options)
+- [Form Options](#form-options)
 
 # Dependencies
 
