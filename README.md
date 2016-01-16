@@ -18,21 +18,15 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
 * Vue.js (>=1.0)
 * Bootstrap (CSS)
 
-# Installation
+# Installation (using `browserify`)
 
-## Option 1 - Using Browserify (Recommended)
-
-This option requires two transforms: `stringify` and `require-globify`.
+Requires two transforms: `stringify` and `require-globify`.
 
     npm install vue-formular
 
 Require the script:
 
     var VueFormular = require('vue-formular');
-
-## Option 2
-
-Import the [compiled standalone file](https://raw.githubusercontent.com/matfish2/vue-formular/master/dist/vue-tables.min.js) into your HTML, which will expose a global `VueFormular` variable.
 
 # Usage
 
@@ -233,10 +227,10 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
 * `messages` `object` see [above](#messages)
 * `texts` `object` Default:
 
-      {
-        sending:'Sending Form...',
-        sent:'Form was successfully sent', // this will be presented in case a string is not returned from the server
-        singleError:'an error was found:', // status bar error's list title
-        errors:'{0} errors were found:'
-      }
+        {
+          sending:'Sending Form...',
+          sent:'Form was successfully sent', // this will be presented in case a string is not returned from the server
+          singleError:'an error was found:', // status bar error's list title
+          errors:'{0} errors were found:'
+        }
 

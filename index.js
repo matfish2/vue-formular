@@ -34,7 +34,6 @@ Vue.use(require('vue-resource'));
 
     created: function() {
 
-
       if (!this.validation || !this.validation.rules)
         return;
 
