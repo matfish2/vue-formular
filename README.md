@@ -143,7 +143,7 @@ Supported rules:
 The field would only display when required. To set specific values for requiring the field use the following format: `otherField:val1, val2`
 * `email` `boolean` - Automatically set to `true` for `vf-email`
 * `number` `boolean` - Automatically set to `true` for `vf-number`
-* `min`,`max`,`between` `number` - when the `number` rule is set to `true` validates numeric values, otherwise vaidates string length
+* `min`,`max`,`between` `number` - when the `number` or `integer` rule is set to `true` validates numeric values, otherwise vaidates string length
 * `integer` `boolean`
 * `digits` `boolean`
 * `remote` `string` Validate field on the server end. Accepts a url, to which the value is sent on change event as a request parameter
@@ -153,7 +153,7 @@ The field would only display when required. To set specific values for requiring
 ### Custom Rules
 
 To create your own custom rule(s) pass a `customRules` property to the form's options.
-the rules are passed as functions that returns `true` if validation passes. e.g:
+the rules are passed as a function that returns `true` if validation passes. e.g:
 
     customRules: {
       someRule: function(field) {
@@ -193,7 +193,7 @@ You can set the default message for the rule, and also override other default me
 ### Server-side validation
 
 Sometimes you might want to do some extra validation on the server side, after the form is sent (i.e no client-side validation errors).
-If server-side validation fails simply return some invalid code (e.g 400). The response will be displayed in the status bar.
+If server-side validation fails simply return some invalid code (e.g 400). The response content will be displayed in the status bar.
 If you want to display more than one error, you can return an object, consisting of `field_name:message` pairs. The messages will be displayed in a list and will each link to its corresponding field (same as client-side errors when `showErrorsInStatusbar` is set to `true`).
 
 ## Events
@@ -208,7 +208,7 @@ Fires off after the form has been sent successfully. Sends through the form data
 
 `vue-formular.invalid`
 
-Fires off after the form returned an invalid response from the server. Sends through the response content
+Fires off after the form returned an invalid response from the server. Sends through the response
 
 `vue-formular.change::field_name`
 
