@@ -1,5 +1,7 @@
 # Vue Formular
 
+[![Build Status](https://travis-ci.org/matfish2/vue-formular.svg?branch=master)](https://travis-ci.org/matfish2/vue-formular)
+
 This vue.js package offers a comperhensive solution for HTML form management, including presentation and validation.
 The presentation is based on [Bootstrap's form component](http://getbootstrap.com/css/#forms).
 
@@ -20,9 +22,11 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
 
     npm install vue-formular
 
-Require the script. Compilation Requires two `browserify` transforms: `stringify` and `require-globify`:
+Require the script:
 
     var VueFormular = require('vue-formular');
+
+Compilation requires two `browserify` transforms: `stringify` and `require-globify`.
 
 # Usage
 
@@ -223,7 +227,7 @@ Options are set in three layers, where the more particular overrides the more ge
 When using a layout other than `form-horizontal` adjust the `top` rule of the `form-control-feedback` class to get the feedback icon aligned with the field.
 * `labelWidth` `number` relevant only for horizontal layout. The number of grid columns allocated for the label. Defaults to `3`.
 * `showErrorsInStatusBar` `boolean` Show client errors in the status bar, with links to the relevant fields, in addition to the error shown under each field. Useful for long forms. Deault: `false`,
-* `additionalPayload` `object` Custom data you want to send along with the form. Serves a similar purpose to that of an hidden input field
+* `additionalPayload` `object` Custom data you want to send along with the form. Serves a similar purpose to that of a hidden input field
 * `customRules` `object` See [above](#custom-rules)
 * `messages` `object` see [above](#messages)
 * `texts` `object` Default:

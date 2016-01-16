@@ -33,6 +33,7 @@
   "main": "index.js",
   "tonicExampleFilename": "tonic-example.js",
   "devDependencies": {
+    "daterangepicker": "0.0.3",
     "jasmine-core": "^2.3.4",
     "jquery": "^2.1.4",
     "karma": "^0.13.15",

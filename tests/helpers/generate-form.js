@@ -1,5 +1,5 @@
   module.exports = function (id,content,options, validation) {
-
+    require('daterangepicker/daterangepicker');
     component = $('<div id="' + id + '"><h1>'+id+'</h1><vf-form action="/send" :validation="validation" :options="options">' + content + '</vf-form></div>');
 
     $(document.body).append(component);

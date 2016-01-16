@@ -51,9 +51,12 @@ Vue.use(require('vue-resource'));
     },
     ready: function() {
 
+      globalOptions = globalOptions?globalOptions:{};
+
       var defaultOptions = require('./lib/options/options')();
       var options = merge(defaultOptions, globalOptions);
       this.options = merge(options, this.options);
+
 
     },
     data: function() {
