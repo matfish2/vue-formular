@@ -16,13 +16,11 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
 * Vue.js (>=1.0)
 * Bootstrap (CSS)
 
-# Installation (using `browserify`)
-
-Requires two transforms: `stringify` and `require-globify`.
+# Installation
 
     npm install vue-formular
 
-Require the script:
+Require the script. Compilation Requires two `browserify` transforms: `stringify` and `require-globify`:
 
     var VueFormular = require('vue-formular');
 
@@ -91,6 +89,11 @@ Numeric and email fields will be validated accordingly.
 * `vf-submit` - Submit button in a row wrapper, floated to the right.
 
   * `text` `string` `optional` Button text. Default: 'Submit'
+
+### Slots
+
+All fields have a `beforeField` and `afterField` [slots](http://vuejs.org/guide/components.html#Named_Slots), which allow you to add custom HTML.
+`vf-submit` has a similar `beforeButton` and `afterButton` slots.
 
 ## Validation
 
