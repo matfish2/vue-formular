@@ -1,7 +1,7 @@
 {
   "name": "vue-formular",
   "description": "a comprehensive vue.js form component",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "keywords": [
     "vue",
     "form",
@@ -17,7 +17,7 @@
     "tonic-example.js"
   ],
   "dependencies": {
-    "daterangepicker": "0.0.3",
+    "deepmerge": "^0.2.10",
     "merge": "^1.2.0",
     "moment": "^2.10.6",
     "vue": "^1.0.10",
@@ -32,9 +32,6 @@
   "license": "MIT",
   "main": "index.js",
   "tonicExampleFilename": "tonic-example.js",
-  "scripts": {
-    "build-min": "browserify -t stringify index.js --s VueFormular | uglifyjs -c > dist/vue-formular.min.js"
-  },
   "devDependencies": {
     "jasmine-core": "^2.3.4",
     "jquery": "^2.1.4",

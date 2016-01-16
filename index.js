@@ -1,5 +1,5 @@
 String.prototype.ucfirst = require('./lib/helpers/ucfirst');
-var merge = require('merge');
+var merge = require('deepmerge');
 
 exports.install = function(Vue, globalOptions) {
 
