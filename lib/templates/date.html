@@ -1,17 +1,4 @@
-<div class="form-inline">
-  <select v-model="day" class="VF-Field--Date__day form-control">
-  <option value="">D</option>
-  <option v-for="day in days" value="{{day}}">{{day}}</option>
-</select>
-<select v-model="month" class="VF-Field--Date__month form-control">
-  <option value="">M</option>
-  <option v-for="month in months" value="{{month}}">{{month}}</option>
-</select>
-<select  v-model="year" class="VF-Field--Date__year form-control">
-  <option value="">Y</option>
-  <option v-for="year in years" value="{{year}}">{{year}}</option>
-</select>
-<input type="hidden" name="{{name}}" v-model="value">
+<div class="VF-Field--Date__datepicker">
+    <i class="glyphicon glyphicon-calendar"></i>
+    <span class="VF-Field--Date__date">{{formattedDate}}</span> <b class="caret"></b>
 </div>
-
-

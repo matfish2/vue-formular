@@ -1,9 +1,10 @@
-  module.exports = function (id,content) {
+  module.exports = function (id,content,options, validation) {
 
-    component = $('<div id="' + id + '"><h1>'+id+'</h1><v-form action="/send">' + content + '</v-form></div>');
+    component = $('<div id="' + id + '"><h1>'+id+'</h1><vf-form action="/send" :validation="validation" :options="options">' + content + '</vf-form></div>');
 
     $(document.body).append(component);
 
+    if (!validation) validation = {};
     var Vue = require('vue');
 
    var VueFormular = require('../../index');
@@ -12,7 +13,24 @@
     var vm = new Vue({
       el:"#" + id,
       data: {
-    }
+        options:options,
+        validation:validation,
+        items: [
+        {
+            value:'1',
+            text:'itemA'
+        },
+        {
+            value:'2',
+            text:'itemB'
+        },
+        {
+            value:'3',
+            text:'itemC'
+        }
+        ]
+        },
+
   });
 
     return vm;

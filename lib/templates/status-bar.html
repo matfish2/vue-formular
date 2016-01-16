@@ -1,7 +1,7 @@
 <div v-if="content" transition="status" class="alert alert-{{$parent.status}}">
  <p v-if="isString(content)">{{content}}<p>
  <div v-if="!isString(content)">
-   <p><b>{{content.length}}</b> errors were found:</p>
+   <p>{{{errorText}}}<p>
    <ul>
      <li v-for="error in content"><a href="{{getLink(error)}}">{{showError(error)}}</a></li>
    </ul>

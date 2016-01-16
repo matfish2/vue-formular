@@ -18,7 +18,6 @@ module.exports = function(config) {
     'index.js',
     'lib/**/*.js',
     'tests/acceptance/**/*.js',
-    'tests/unit/**/*.js'
     ],
 
 
@@ -33,7 +32,6 @@ module.exports = function(config) {
      'index.js': ['browserify'],
      'lib/**/*.js': ['browserify'],
      'tests/acceptance/**/*.js': [ 'browserify' ],
-     'tests/unit/**/*.js': [ 'browserify' ]
    },
 
     // test results reporter to use
@@ -41,9 +39,6 @@ module.exports = function(config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress'],
 
-    browserify: {
-        transform:['stringify','require-globify']
-    },
 
     // web server port
     port: 9876,

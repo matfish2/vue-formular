@@ -1,14 +1,6 @@
-
-<div v-if="multiple"  v-for="item in items" class="checkbox">
+<div v-for="item in items" class="{{type}}">
   <label>
-    <input v-model="value" name="{{name}}" type="checkbox" value="{{item.value}}">
-    {{item.text}}
-  </label>
-</div>
-
-<div v-if="!multiple" class="radio" v-for="item in items">
-  <label>
-    <input v-model="value" type="radio" name="{{name}}" value="{{item.value}}">
+    <input v-model="value" name="{{name}}" type="{{type}}" value="{{item.value}}">
     {{item.text}}
   </label>
 </div>
