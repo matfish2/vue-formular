@@ -1,6 +1,6 @@
 # Vue Formular
 
-This vue.js package offers a comperhensive solution to HTML form management, including presentation and validation.
+This vue.js package offers a comperhensive solution for HTML form management, including presentation and validation.
 The presentation is based on [Bootstrap's form component](http://getbootstrap.com/css/#forms).
 
 - [Dependencies](#dependencies)
@@ -36,12 +36,12 @@ Require the script:
 
 For example:
 
-  <vf-form action="process-form" method="POST" :validation="validation" :options="options">
-    <vf-status-bar></vf-status-bar>
-    <vf-text label="User name:" name="username"></vf-text>
-    <vf-password label="Password:" name="username"></vf-password>
-    <vf-submit></vf-submit>
-  </vf-form>
+    <vf-form action="process-form" method="POST" :validation="validation" :options="options">
+      <vf-status-bar></vf-status-bar>
+      <vf-text label="User name:" name="username"></vf-text>
+      <vf-password label="Password:" name="username"></vf-password>
+      <vf-submit></vf-submit>
+    </vf-form>
 
 ## Fields
 
