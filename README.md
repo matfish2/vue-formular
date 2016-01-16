@@ -37,7 +37,7 @@ For example:
     <vf-form action="process-form" method="POST" :validation="validation" :options="options">
       <vf-status-bar></vf-status-bar>
       <vf-text label="User name:" name="username"></vf-text>
-      <vf-password label="Password:" name="username"></vf-password>
+      <vf-password label="Password:" name="password"></vf-password>
       <vf-submit></vf-submit>
     </vf-form>
 
@@ -231,7 +231,7 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
         {
           sending:'Sending Form...',
           sent:'Form was successfully sent', // this will be presented in case a string is not returned from the server
-          singleError:'an error was found:', // status bar error's list title
+          singleError:'an error was found:', // status bar errors list title
           errors:'{0} errors were found:'
         }
 
