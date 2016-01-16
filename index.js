@@ -61,6 +61,7 @@ Vue.use(require('vue-resource'));
     },
     data: function() {
       return {
+        isForm: true,
         errors:[],
         serverErrors:[],
         relatedFields:{},
