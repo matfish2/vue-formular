@@ -128,11 +128,11 @@ Supported rules:
         }
 
         .VF-Field--required>label:before {
-        content:"*";
-        font-size: 20px;
-        color:red;
-        position: absolute;
-        left:-15px;
+          content:"*";
+          font-size: 20px;
+          color:red;
+          position: absolute;
+          left:-15px;
         }
 
 * `requiredIf` `string` - make the field required only if another field was filled with a value (typically a select or checkbox).
