@@ -62,6 +62,7 @@ Vue.use(require('vue-resource'));
     data: function() {
       return {
         isForm: true,
+        dirtyFields:[],
         errors:[],
         serverErrors:[],
         relatedFields:{},
@@ -71,13 +72,17 @@ Vue.use(require('vue-resource'));
     },
     computed: {
         labelClass:require('./lib/computed/label-class'),
-        fieldClass:require('./lib/computed/field-class')
+        fieldClass:require('./lib/computed/field-class'),
+        pristine: function() {
+          return this.dirtyFields.length==0;
+        }
     },
     methods: {
       submit:require('./lib/methods/submit'),
       formData:require('./lib/methods/form-data'),
       getField:require('./lib/methods/get-field'),
-      showAllErrors:require('./lib/methods/show-all-errors')
+      showAllErrors:require('./lib/methods/show-all-errors'),
+      reinitForm:require('./lib/methods/reinit-form')
 }
 
 }

@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/matfish2/vue-formular.svg?branch=master)](https://travis-ci.org/matfish2/vue-formular)
 
-This vue.js package offers a comperhensive solution for HTML form management, including presentation and validation.
+This vue.js package offers a comperhensive solution for HTML form management, including presentation, validation and submitting the form using an AJAX request.
+The payload sent to the server will include only changed ("dirty") fields, thus saving redundant data iteration and manipulation on the server side.
 The presentation is based on [Bootstrap's form component](http://getbootstrap.com/css/#forms).
 
 - [Dependencies](#dependencies)
@@ -90,7 +91,7 @@ Numeric and email fields will be validated accordingly.
     * `items` same as in `vf-select`
 
 * `vf-file` - Presentation only. For funcitonality you can use an ajax file uploader, such as [AjaxFileUpload](https://github.com/davgothic/AjaxFileUpload)
-* `vf-submit` - Submit button in a row wrapper, floated to the right.
+* `vf-submit` - Submit button in a row wrapper, floated to the right. Will be disabled when the form is in pristine state
 
   * `text` `string` `optional` Button text. Default: 'Submit'
 
