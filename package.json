@@ -1,7 +1,7 @@
 {
   "name": "vue-formular",
   "description": "a comprehensive vue.js form component",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "keywords": [
     "vue",
     "form",
@@ -31,7 +31,6 @@
   },
   "license": "MIT",
   "main": "index.js",
-  "tonicExampleFilename": "tonic-example.js",
   "devDependencies": {
     "daterangepicker": "0.0.3",
     "jasmine-core": "^2.3.4",
