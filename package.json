@@ -1,7 +1,7 @@
 {
   "name": "vue-formular",
   "description": "a comprehensive vue.js form component",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "keywords": [
     "vue",
     "form",
@@ -18,7 +18,6 @@
   ],
   "dependencies": {
     "clone": "^1.0.2",
-    "deepmerge": "^0.2.10",
     "merge": "^1.2.0",
     "moment": "^2.10.6",
     "vue": "^1.0.10",

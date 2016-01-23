@@ -1,5 +1,5 @@
 String.prototype.ucfirst = require('./lib/helpers/ucfirst');
-var merge = require('deepmerge');
+var merge = require('merge');
 
 exports.install = function(Vue, globalOptions) {
 
@@ -54,8 +54,8 @@ Vue.use(require('vue-resource'));
       globalOptions = globalOptions?globalOptions:{};
 
       var defaultOptions = require('./lib/options/options')();
-      var options = merge(defaultOptions, globalOptions);
-      this.options = merge(options, this.options);
+      var options = merge.recursive(defaultOptions, globalOptions);
+      this.options = merge.recursive(options, this.options);
 
 
     },
