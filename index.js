@@ -20,7 +20,11 @@ Vue.use(require('vue-resource'));
       },
       validation: {
         type: Object,
-        required:false
+        required:false,
+         default: function() {
+          return {
+        }
+        }
       },
       options:{
         type: Object,
