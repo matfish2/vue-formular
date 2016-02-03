@@ -1,4 +1,4 @@
-<div v-if="content" transition="status" class="alert alert-{{$parent.status}}">
+<div v-if="content"  class="alert alert-{{$parent.status}}">
  <p v-if="isString(content)">{{content}}<p>
  <div v-if="!isString(content)">
    <p>{{{errorText}}}<p>
