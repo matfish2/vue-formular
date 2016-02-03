@@ -35,6 +35,8 @@ Import the [standalone compiled script](https://raw.githubusercontent.com/matfis
 
 # Usage
 
+[Check out the live demo](https://jsfiddle.net/matfish2/fjurzoLj/)
+
 ## Register the component
 
     Vue.use(VueFormular, options);
