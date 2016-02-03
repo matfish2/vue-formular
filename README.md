@@ -21,13 +21,17 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
 
 # Installation
 
+## Option 1 (Recommended) - using `browserify` with the `stringify` and `require-globify` transforms.
+
     npm install vue-formular
 
 Require the script:
 
     var VueFormular = require('vue-formular');
 
-Compilation requires two `browserify` transforms: `stringify` and `require-globify`.
+## Option 2
+
+Import the [standalone compiled script](https://raw.githubusercontent.com/matfish2/vue-formular/master/dist/vue-formular.min.js)
 
 # Usage
 

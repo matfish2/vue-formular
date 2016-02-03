@@ -1,7 +1,7 @@
 {
   "name": "vue-formular",
   "description": "a comprehensive vue.js form component",
-  "version": "0.0.19",
+  "version": "0.0.3",
   "keywords": [
     "vue",
     "form",
@@ -28,6 +28,9 @@
       "stringify",
       "require-globify"
     ]
+  },
+  "scripts": {
+    "build-min": "browserify index.js --s VueFormular | uglifyjs -c > dist/vue-formular.min.js"
   },
   "license": "MIT",
   "main": "index.js",
