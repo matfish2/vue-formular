@@ -30,7 +30,7 @@
     ]
   },
   "scripts": {
-    "build-min": "browserify index.js --s VueFormular | uglifyjs -c > ../../../public/vue-formular.min.js"
+    "build-min": "browserify index.js --s VueFormular | uglifyjs -c > dist/vue-formular.min.js"
   },
   "license": "MIT",
   "main": "index.js",
