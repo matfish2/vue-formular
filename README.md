@@ -1,6 +1,6 @@
 # Vue Formular
 
-[![Build Status](https://travis-ci.org/matfish2/vue-formular.svg?branch=master)](https://travis-ci.org/matfish2/vue-formular)
+[![npm version](https://badge.fury.io/js/vue-formular.svg)](https://badge.fury.io/js/vue-formular) [![Build Status](https://travis-ci.org/matfish2/vue-formular.svg?branch=master)](https://travis-ci.org/matfish2/vue-formular)
 
 This vue.js package offers a comperhensive solution for HTML form management, including presentation, validation and submitting the form using an AJAX request.
 The payload sent to the server will include only changed ("dirty") fields, thus saving redundant data iteration and manipulation on the server side.
@@ -21,7 +21,9 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
 
 # Installation
 
-## Option 1 (Recommended) - using `browserify` with the `stringify` and `require-globify` transforms.
+## Option 1 (Recommended)
+
+Compilation requires `browserify` with the `stringify` and `require-globify` transforms.
 
     npm install vue-formular
 
