@@ -2,8 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/vue-formular.svg)](https://badge.fury.io/js/vue-formular) [![Build Status](https://travis-ci.org/matfish2/vue-formular.svg?branch=master)](https://travis-ci.org/matfish2/vue-formular)
 
-This vue.js package offers a comperhensive solution for HTML form management, including presentation, validation and submitting the form using an AJAX request.
-The payload sent to the server will include only changed ("dirty") fields, thus saving redundant data iteration and manipulation on the server side.
+This vue.js package offers a comperhensive solution for HTML form management, including presentation, validation and (optional) AJAX submission.
+When using AJAX, The payload sent to the server will include only changed ("dirty") fields, thus saving redundant data iteration and manipulation on the server side.
 The presentation is based on [Bootstrap's form component](http://getbootstrap.com/css/#forms).
 
 - [Dependencies](#dependencies)
@@ -53,6 +53,8 @@ For example:
       <vf-password label="Password:" name="password"></vf-password>
       <vf-submit></vf-submit>
     </vf-form>
+
+Important: to send the form using an AJAX request, add the `ajax` property to `vf-form`.
 
 ## Fields
 
@@ -199,7 +201,7 @@ You can set the default message for the rule, and also override other default me
         smallerThan:'The field :field must be smaller than :relatedField'
       }
 
-### Server-side validation
+### Server-side validation (when using AJAX to send the form)
 
 Sometimes you might want to do some extra validation on the server side, after the form is sent (i.e no client-side validation errors).
 If server-side validation fails simply return some invalid code (e.g 400). The response content will be displayed in the status bar.
@@ -207,15 +209,15 @@ If you want to display more than one error, you can return an object, consisting
 
 ## Events
 
-`vue-formular.sending`
+`vue-formular.sending` (ajax form)
 
 Fires off when the form is being sent. Sends through the form data. A message will automatically appear in the status bar.
 
-`vue-formular.sent`
+`vue-formular.sent` (ajax form)
 
 Fires off after the form has been sent successfully. Sends through the form data. The status bar will show the response returned from the server, if it is a string, or else the designtaed text.
 
-`vue-formular.invalid`
+`vue-formular.invalid` (ajax form)
 
 Fires off after the form returned an invalid response from the server. Sends through the response
 

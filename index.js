@@ -9,6 +9,11 @@ Vue.use(require('vue-resource'));
 
     template: require('./lib/templates/form.html'),
     props: {
+      ajax: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
       action: {
         type: String,
         required: true
@@ -61,12 +66,19 @@ Vue.use(require('vue-resource'));
       var options = merge.recursive(defaultOptions, globalOptions);
       this.options = merge.recursive(options, this.options);
 
+      if (!this.ajax) {
+        var payload = this.options.additionalPayload;
+        for (key in payload) {
+          this.additionalValues.push({name:key,value:payload[key]});
+        }
+      }
 
     },
     data: function() {
       return {
         isForm: true,
         dirtyFields:[],
+        additionalValues:[],
         errors:[],
         serverErrors:[],
         relatedFields:{},
