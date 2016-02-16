@@ -2,7 +2,7 @@
 
    <label v-if="label" class="VF-Field__label control-label" :class="$parent.labelClass" for="{{name}}">{{{label}}}</label>
 
- <div class="VF-Field__wrapper" :class="$parent.fieldClass">
+ <div class="VF-Field__wrapper" :class="label?$parent.fieldClass:''">
   <slot name="beforeField"></slot>
   [[field]]
   <span v-if="hasFeedback" class="glyphicon glyphicon-{{feedbackIcon}} form-control-feedback" aria-hidden="true"></span>
