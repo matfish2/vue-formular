@@ -100,7 +100,10 @@ Numeric and email fields will be validated accordingly.
     * `multiple` `boolean` `optional`
     * `items` same as in `vf-select`
 
-* `vf-file` - Presentation only. For funcitonality you can use an ajax file uploader, such as [AjaxFileUpload](https://github.com/davgothic/AjaxFileUpload)
+* `vf-file` -
+  * `ajax` `boolean` `optional` - use [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload)
+  * `options` `object` `optional` - plugin options for this field. merged with the `files` form-level option.
+
 * `vf-submit` - Submit button in a row wrapper, floated to the right. Will be disabled when the form is in pristine state
 
   * `text` `string` `optional` Button text. Default: 'Submit'
@@ -239,6 +242,7 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
 * `labelWidth` `number` relevant only for horizontal layout. The number of grid columns allocated for the label. Defaults to `3`.
 * `showClientErrorsInStatusBar` `boolean` Show client errors in the status bar, with links to the relevant fields, in addition to the error shown under each field. Useful for long forms. Deault: `false`
 * `additionalPayload` `object` Custom data you want to send along with the form. Serves a similar purpose to that of a hidden input field
+* `files` `object` - Options for [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload), to be used on `vf-file` with an `ajax` prop.
 * `customRules` `object` See [above](#custom-rules)
 * `messages` `object` see [above](#messages)
 * `texts` `object` Default:
