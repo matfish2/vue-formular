@@ -43,23 +43,6 @@ Vue.use(require('vue-resource'));
 
     created: function() {
 
-      if (!this.validation || !this.validation.rules)
-        return;
-
-      for (var field in this.validation.rules) {
-        for (var rule in this.validation.rules[field]) {
-
-          if (['requiredIf','smallerThan','greaterThan'].indexOf(rule)>-1) {
-            field = field.split(":")[0];
-            var foreignField = this.validation.rules[field][rule].split(":")[0];
-            this.relatedFields[foreignField] = field;
-          }
-        }
-      }
-
-    },
-    ready: function() {
-
       globalOptions = globalOptions?globalOptions:{};
 
       var defaultOptions = require('./lib/options/options')();
@@ -73,6 +56,19 @@ Vue.use(require('vue-resource'));
         }
       }
 
+      if (!this.validation || !this.validation.rules)
+        return;
+
+      for (var field in this.validation.rules) {
+        for (var rule in this.validation.rules[field]) {
+
+          if (['requiredIf','smallerThan','greaterThan'].indexOf(rule)>-1) {
+            field = field.split(":")[0];
+            var foreignField = this.validation.rules[field][rule].split(":")[0];
+            this.relatedFields[foreignField] = field;
+          }
+        }
+      }
     },
     data: function() {
       return {
