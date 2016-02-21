@@ -100,7 +100,7 @@ Numeric and email fields will be validated accordingly.
     * `multiple` `boolean` `optional`
     * `items` same as in `vf-select`
 
-* `vf-file` -
+* `vf-file`
   * `ajax` `boolean` `optional` - use [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload)
   * `options` `object` `optional` - plugin options for this field. merged with the `files` form-level option.
 

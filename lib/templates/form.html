@@ -2,3 +2,22 @@
   <input v-if="!ajax" v-for="val in additionalValues" type="hidden" name="{{val.name}}" value="{{val.value}}">
   <slot></slot>
 </form>
+
+
+<style>
+  .VF-Field__file-upload {
+    position: relative;
+  }
+
+  .VF-Field__file-upload-icon  {
+  position: absolute;
+  top:9px;
+  }
+
+  .VF-Field__file-upload input {
+    opacity: 0;
+    position: absolute;
+    top:0;
+    cursor:pointer;
+  }
+</style>
