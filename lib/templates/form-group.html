@@ -1,4 +1,4 @@
- <div v-show="shouldShow" class="VF VF-Field VF-Field--[[fieldType]] form-group" :class="validationClasses">
+ <div v-show="shouldShow" id="{{name}}" class="VF VF-Field VF-Field--[[fieldType]] form-group" :class="validationClasses">
 
    <label v-if="hasLabel" class="VF-Field__label control-label" :class="$parent.labelClass" for="{{name}}">{{{label}}}</label>
 
