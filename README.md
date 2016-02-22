@@ -157,7 +157,10 @@ Supported rules:
 The field would only display when required. To set specific values for requiring the field use the following format: `otherField:val1, val2`
 * `email` `boolean` - Automatically set to `true` for `vf-email`
 * `number` `boolean` - Automatically set to `true` for `vf-number`
-* `min`,`max`,`between` `number` - when the `number` or `integer` rule is set to `true` validates numeric values, otherwise vaidates string length
+* `min`,`max`,`between` `number` -
+ a. If the `number` or `integer` rules are set to `true` validates numeric values
+ b. If the parameter is a `moment` object validates dates
+ c. Otherwise - validates string length
 * `integer` `boolean`
 * `digits` `boolean`
 * `remote` `string` Validate field on the server end. Accepts a url, to which the value is sent on change event as a request parameter
