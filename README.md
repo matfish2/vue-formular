@@ -182,30 +182,33 @@ the rules are passed as a function that returns `true` if validation passes. e.g
 
 You can set the default message for the rule, and also override other default messages, by passing a `messages` property to the options object. Defaults are:
 
-    {
-        required:'The :field field is required',
-        number:'The :field field must be a number',
-        integer:'The :field field must be an integer',
-        digits:'The :field field must have digits only',
-        email:'The :field field must be a valid email address',
-        between:{
-          string:'The field :field must contain between {0} and {1} characters',
-          number:'The field :field must be a number between {0} and {1}',
-        },
-        min: {
-          string:'The :field field must contain at least {0} characters',
-          number:'The :field field must be equal to or greater than {0}',
-        },
-        max: {
-          string:'The field :field must contain no more than {0} characters',
-          number:'The field :field must be equal to or smaller than {0}',
-        },
-        remote:'Remote Error',
-        requiredIf:'The field :field is required',
-        url:'Please enter a valid URL',
-        greaterThan:'The field :field must be greater than :relatedField',
-        smallerThan:'The field :field must be smaller than :relatedField'
-      }
+        {
+            required:'The :field field is required',
+            number:'The :field field must be a number',
+            integer:'The :field field must be an integer',
+            digits:'The :field field must have digits only',
+            email:'The :field field must be a valid email address',
+            between:{
+              string:'The field :field must contain between {0} and {1} characters',
+              number:'The field :field must be a number between {0} and {1}',
+              date:'The field :field must be a date between {0} and {1}'
+            },
+            min: {
+              string:'The :field field must contain at least {0} characters',
+              number:'The :field field must be equal to or greater than {0}',
+              date:'The field :field must be a date equal to or greater than {0}'
+            },
+            max: {
+              string:'The field :field must contain no more than {0} characters',
+              number:'The field :field must be equal to or smaller than {0}',
+              date:'The field :field must be a date equal to or smaller than {0}'
+            },
+            remote:'Remote Error',
+            requiredIf:'The field :field is required',
+            url:'Please enter a valid URL',
+            greaterThan:'The field :field must be greater than :relatedField',
+            smallerThan:'The field :field must be smaller than :relatedField'
+          }
 
 ### Server-side validation (when using AJAX to send the form)
 
