@@ -220,7 +220,11 @@ Fires off when the form is being sent. Sends through the form data. A message wi
 
 Fires off after the form has been sent successfully. Sends through the form data. The status bar will show the response returned from the server, if it is a string, or else the designtaed text.
 
-`vue-formular.invalid` (ajax form)
+`vue-formular.invalid.client`
+
+Fires off after form submission was prevented due to client-side errors. Sends through the errors
+
+`vue-formular.invalid.server` (ajax form)
 
 Fires off after the form returned an invalid response from the server. Sends through the response
 
