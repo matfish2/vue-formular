@@ -83,7 +83,7 @@ Numeric and email fields will be validated accordingly.
 
    * `range` `boolean` `optional` pick a range of dates. the `value` prop should be passed as an object with `start` and `end` properties. A similar object is sent to the server
    * `format` `string` `optional` Date presentation (using `moment`). Default: 'DD/MM/YYYY'.
-
+   * `options` `object` `optional` Plugin options. Merged with the form-level option `dateOptions`.
 * `vf-select` - select list
 
   * `select2` `object\boolean` `optional` Use select2. accepts options for select2, or nothing
@@ -102,7 +102,7 @@ Numeric and email fields will be validated accordingly.
 
 * `vf-file`
   * `ajax` `boolean` `optional` - use [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload)
-  * `options` `object` `optional` - plugin options for this field. merged with the `files` form-level option.
+  * `options` `object` `optional` - plugin options for this field. merged with the `fileOptions` form-level option.
 
 * `vf-submit` - Submit button in a row wrapper, floated to the right. Will be disabled when the form is in pristine state
 
@@ -252,7 +252,8 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
 * `labelWidth` `number` relevant only for horizontal layout. The number of grid columns allocated for the label. Defaults to `3`.
 * `showClientErrorsInStatusBar` `boolean` Show client errors in the status bar, with links to the relevant fields, in addition to the error shown under each field. Useful for long forms. Deault: `false`
 * `additionalPayload` `object` Custom data you want to send along with the form. Serves a similar purpose to that of a hidden input field
-* `files` `object` - Options for [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload), to be used on `vf-file` with an `ajax` prop.
+* `fileOptions` `object` - Global options for [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload), to be used on `vf-file` with an `ajax` prop.
+* `dateOptions` `object` - Global options for [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker), to be used on `vf-date`.
 * `customRules` `object` See [above](#custom-rules)
 * `messages` `object` see [above](#messages)
 * `texts` `object` Default:
