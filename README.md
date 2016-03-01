@@ -100,8 +100,8 @@ Numeric and email fields will be validated accordingly.
     * `multiple` `boolean` `optional`
     * `items` same as in `vf-select`
 
-* `vf-file`
-  * `ajax` `boolean` `optional` - use [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload)
+* `vf-file` -
+  * `ajax` `boolean` `optional` - use [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload). File rules will be sent as a stringified `rules` key.
   * `options` `object` `optional` - plugin options for this field. merged with the `fileOptions` form-level option.
 
 * `vf-submit` - Submit button in a row wrapper, floated to the right. Will be disabled when the form is in pristine state
@@ -115,8 +115,14 @@ All fields have `beforeField` and `afterField` [slots](http://vuejs.org/guide/co
 
 ## Validation
 
-passed as an object to the form's `validation` prop.
- An example works best to illustrate the syntax:
+There are two ways to pass rules:
+
+a. Through the form's `validation` prop.
+b. Through the `rules` prop of each individual field.
+
+Rules which depend on other fields (i.e `requiredIf`,`greaterThan` and `smallerThan`) should be passed using option `a`.
+
+ Option `a` example:
 
        {
             rules: {
@@ -136,6 +142,10 @@ passed as an object to the form's `validation` prop.
         }
 
 The optional `messages` property overides the default messages object for a specific field.
+
+Option `b` example:
+
+    <vf-text label="Username:" name="username" :rules="{required:true, min:6}"></vf-text>
 
 Supported rules:
 
