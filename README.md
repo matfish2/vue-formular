@@ -224,7 +224,18 @@ You can set the default message for the rule, and also override other default me
 
 Sometimes you might want to do some extra validation on the server side, after the form is sent (i.e no client-side validation errors).
 If server-side validation fails simply return some invalid code (e.g 400). The response content will be displayed in the status bar.
-If you want to display more than one error, you can return an object, consisting of `field_name:message` pairs. The messages will be displayed in a list and will each link to its corresponding field (same as client-side errors when `showClientErrorsInStatusBar` is set to `true`).
+To display more than one error, return an array similar to this:
+
+      [
+        {
+          name: 'username',
+          message: 'The username field is required'
+        },
+        {
+          name: 'password',
+          message: 'The password must contain at least 6 characters'
+        }
+      ]
 
 ## Events
 
