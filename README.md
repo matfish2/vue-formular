@@ -58,7 +58,7 @@ Important: to send the form using an AJAX request, add the `ajax` property to `v
 
 ## Fields
 
-Fields can be used in a form as DIRECT children of the form, or independently (see the `change` event)
+Fields can be used in a form as DIRECT children of the form, or independently (see the `change` event). All fields have a `fieldType` property which can be used to determine the type the component's instance.
 All fields accept the following properties:
 
 * `label` `string` `optional`
