@@ -169,7 +169,7 @@ The field would only display when required. To set specific values for requiring
 * `number` `boolean` - Automatically set to `true` for `vf-number`
 * `min`,`max`,`between` `number` -
  a. If the `number` or `integer` rules are set to `true` validates numeric values
- b. If the parameter is a `moment` object validates dates
+ b. If the parameter is a `moment` object or a `YYYY-MM-DD`-formatted string validates dates
  c. Otherwise - validates string length
 * `integer` `boolean`
 * `digits` `boolean`
