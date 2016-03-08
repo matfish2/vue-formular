@@ -58,7 +58,7 @@ Important: to send the form using an AJAX request, add the `ajax` property to `v
 
 ## Fields
 
-Fields can be used in a form as DIRECT children of the form, or independently (see the `change` event). All fields have a `fieldType` property which can be used to determine the type the component's instance.
+Fields can be used in a form as DIRECT children of the form, or independently (see the `change` event).
 All fields accept the following properties:
 
 * `label` `string` `optional`
@@ -107,6 +107,8 @@ Numeric and email fields will be validated accordingly.
 * `vf-submit` - Submit button in a row wrapper, floated to the right. Will be disabled when the form is in pristine state
 
   * `text` `string` `optional` Button text. Default: 'Submit'
+
+Note: All fields share a `fieldType` property which can be programatically used to determine the type of the component.
 
 ### Slots
 
