@@ -242,7 +242,7 @@ To display more than one error, return an array similar to this:
 
 `vue-formular.sending` (ajax form)
 
-Fires off when the form is being sent. Sends through the form data. A message will automatically appear in the status bar.
+Fires off when the form is being sent. A message will automatically appear in the status bar.
 
 `vue-formular.sent` (ajax form)
 
