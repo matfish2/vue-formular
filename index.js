@@ -73,7 +73,7 @@ Vue.use(require('vue-resource'));
     data: function() {
       return {
         isForm: true,
-        dirtyFields:[],
+        fields:[],
         additionalValues:[],
         errors:[],
         serverErrors:[],
@@ -86,7 +86,7 @@ Vue.use(require('vue-resource'));
         labelClass:require('./lib/computed/label-class'),
         fieldClass:require('./lib/computed/field-class'),
         pristine: function() {
-          return this.dirtyFields.length==0;
+          return this.fields.length==0;
         }
     },
     methods: {

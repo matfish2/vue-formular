@@ -3,7 +3,6 @@
 [![npm version](https://badge.fury.io/js/vue-formular.svg)](https://badge.fury.io/js/vue-formular) [![Build Status](https://travis-ci.org/matfish2/vue-formular.svg?branch=master)](https://travis-ci.org/matfish2/vue-formular)
 
 This vue.js package offers a comperhensive solution for HTML form management, including presentation, validation and (optional) AJAX submission.
-When using AJAX, The payload sent to the server will include only changed ("dirty") fields, thus saving redundant data iteration and manipulation on the server side.
 The presentation is based on [Bootstrap's form component](http://getbootstrap.com/css/#forms).
 
 - [Dependencies](#dependencies)
@@ -275,6 +274,7 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
 * `labelWidth` `number` relevant only for horizontal layout. The number of grid columns allocated for the label. Defaults to `3`.
 * `showClientErrorsInStatusBar` `boolean` Show client errors in the status bar, with links to the relevant fields, in addition to the error shown under each field. Useful for long forms. Deault: `false`
 * `additionalPayload` `object` Custom data you want to send along with the form. Serves a similar purpose to that of a hidden input field
+* `sendOnlyDirtyFields` `boolean` when using AJAX form send only the dirty fields. Default: `false`
 * `fileOptions` `object` - Global options for [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload), to be used on `vf-file` with an `ajax` prop.
 * `dateOptions` `object` - Global options for [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker), to be used on `vf-date`.
 * `customRules` `object` See [above](#custom-rules)
