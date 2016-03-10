@@ -88,7 +88,8 @@ Numeric and email fields will be validated accordingly.
   * `select2` `object\boolean` `optional` Use select2. accepts options for select2, or nothing
   * `multiple` `boolean` `optional`
   * `items` `array of objects` `required` - item format: `{value:1, text:'Option A'}`
-  * `placeholder` `string` Default: 'Select Option'
+  * `placeholder` `string` Default option text (value will be an empty string). Default: 'Select Option'. Displayed only for a single select, which is not a select2.
+  * `no-default` `boolean` `optional` Don't display the default option 
 
 * `vf-checkbox` - a single boolean checkbox
 
