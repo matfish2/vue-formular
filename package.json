@@ -14,6 +14,7 @@
   },
   "files": [
     "lib",
+    "index.js",
     "tonic-example.js"
   ],
   "dependencies": {
