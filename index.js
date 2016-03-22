@@ -3,8 +3,6 @@ var merge = require('merge');
 
 exports.install = function(Vue, globalOptions) {
 
-Vue.use(require('vue-resource'));
-
   var vfForm = {
 
     template: require('./lib/templates/form.html'),
