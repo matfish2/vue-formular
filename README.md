@@ -73,7 +73,7 @@ The following fields are supported:
 * `vf-email` - `input[type=email]`
 * `vf-textarea` - long text
 
-All of the above accept an optional `placeholder` prop.
+All of the above accept optional `placeholder` and `disabled` props.
 Numeric and email fields will be validated accordingly.
 
 * `vf-date` - Datepicker (single or range).
