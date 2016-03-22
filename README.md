@@ -17,6 +17,7 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
 
 * Vue.js (>=1.0)
 * Bootstrap (CSS)
+* vue-resource (When submitting via AJAX)
 
 # Installation
 
@@ -53,7 +54,7 @@ For example:
       <vf-submit></vf-submit>
     </vf-form>
 
-Important: to send the form using an AJAX request, add the `ajax` property to `vf-form`.
+Important: to send the form using an AJAX request, add the `ajax` property to `vf-form`, and require `vue-resource`
 
 ## Fields
 
@@ -175,7 +176,7 @@ The field would only display when required. To set specific values for requiring
  c. Otherwise - validates string length
 * `integer` `boolean`
 * `digits` `boolean`
-* `remote` `string` Validate field on the server end. Accepts a url, to which the value is sent on change event as a request parameter
+* `remote` `string` Validate field on the server end. Accepts a url, to which the value is sent on change event as a request parameter. Requires `vue-resource`
 * `greaterThan`,`smallerThan` `string` accepts the name of the compared field. Compares numbers and dates
 * `url` `boolean`
 
