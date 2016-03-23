@@ -95,6 +95,7 @@ Numeric and email fields will be validated accordingly.
   * `callback` `function` `optional` When using `ajax-url` this can be used to process the raw server output before it is passed to presentation.
   * `filter-by` `string` `optional` Dynamically filter list options by another select field.
   Recieves the name of the other field. The list items should each have a key with the same name, whose value will be compared against the filtering field's value. When the filtering field has no value all items are presented.
+  When the list is fetched remotely the filtering field value is sent as a request parameter
   
 * `vf-checkbox` - a single boolean checkbox
 
