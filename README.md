@@ -88,12 +88,14 @@ Numeric and email fields will be validated accordingly.
 
   * `select2` `object\boolean` `optional` Use select2. accepts options for select2, or nothing
   * `multiple` `boolean` `optional`
-  * `items` `array of objects` `required` - item format: `{value:1, text:'Option A'}`
+  * `items` `array of objects` `optional` - item format: `{value:1, text:'Option A'}`. Defaults to an empty array
   * `placeholder` `string` Default option text (value will be an empty string). Default: 'Select Option'. Displayed only for a single select, which is not a select2.
   * `no-default` `boolean` `optional` Don't display the default option 
+  * `ajax-url` `string` `optional` Fetch options from remote server using this url
+  * `callback` `function` `optional` When using `ajax-url` this can be used to process the raw server output before it is passed to presentation.
   * `filter-by` `string` `optional` Dynamically filter list options by another select field.
   Recieves the name of the other field. The list items should each have a key with the same name, whose value will be compared against the filtering field's value. When the filtering field has no value all items are presented.
-
+  
 * `vf-checkbox` - a single boolean checkbox
 
    * `checked` `boolean` use this instead of `value`
