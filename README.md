@@ -90,13 +90,13 @@ Numeric and email fields will be validated accordingly.
   * `multiple` `boolean` `optional`
   * `items` `array of objects` `optional` - item format: `{value:1, text:'Option A'}`. Defaults to an empty array
   * `placeholder` `string` Default option text (value will be an empty string). Default: 'Select Option'. Displayed only for a single select, which is not a select2.
-  * `no-default` `boolean` `optional` Don't display the default option 
+  * `no-default` `boolean` `optional` Don't display the default option
   * `ajax-url` `string` `optional` Fetch options from remote server using this url
   * `callback` `function` `optional` When using `ajax-url` this can be used to process the raw server output before it is passed to presentation.
   * `filter-by` `string` `optional` Dynamically filter list options by another select field.
   Recieves the name of the other field. The list items should each have a key with the same name, whose value will be compared against the filtering field's value. When the filtering field has no value all items are presented.
   When the list is fetched remotely the filtering field value is sent as a request parameter
-  
+
 * `vf-checkbox` - a single boolean checkbox
 
    * `checked` `boolean` use this instead of `value`
@@ -282,6 +282,7 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
 * `showClientErrorsInStatusBar` `boolean` Show client errors in the status bar, with links to the relevant fields, in addition to the error shown under each field. Useful for long forms. Deault: `false`
 * `additionalPayload` `object` Custom data you want to send along with the form. Serves a similar purpose to that of a hidden input field
 * `sendOnlyDirtyFields` `boolean` when using AJAX form send only the dirty fields. Default: `false`
+* `select2Options` `object` - Global options for [select2](https://github.com/blueimp/jQuery-File-Upload), to be used on 'vf-select' with a 'select2'  or 'ajax-url' prop
 * `fileOptions` `object` - Global options for [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload), to be used on `vf-file` with an `ajax` prop.
 * `dateOptions` `object` - Global options for [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker), to be used on `vf-date`.
 * `customRules` `object` See [above](#custom-rules)
