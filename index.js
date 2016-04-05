@@ -63,7 +63,13 @@ exports.install = function(Vue, globalOptions) {
           if (['requiredIf','smallerThan','greaterThan'].indexOf(rule)>-1) {
             field = field.split(":")[0];
             var foreignField = this.validation.rules[field][rule].split(":")[0];
-            this.relatedFields[foreignField] = field;
+           
+            if (typeof this.relatedFields[foreignField]=='undefined') {
+              this.relatedFields[foreignField] = [];
+            }
+
+            this.relatedFields[foreignField].push(field);
+
           }
         }
       }
