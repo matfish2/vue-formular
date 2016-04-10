@@ -283,7 +283,6 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
 * `showClientErrorsInStatusBar` `boolean` Show client errors in the status bar, with links to the relevant fields, in addition to the error shown under each field. Useful for long forms. Deault: `false`
 * `additionalPayload` `object` Custom data you want to send along with the form. Serves a similar purpose to that of a hidden input field
 * `sendOnlyDirtyFields` `boolean` when using AJAX form send only the dirty fields. Default: `false`
-* `disabledPristineForm` `boolean` When the form is pristine disable the submit button. Default: 'false'
 * `select2Options` `object` - Global options for [select2](https://github.com/blueimp/jQuery-File-Upload), to be used on 'vf-select' with a 'select2'  or 'ajax-url' prop
 * `fileOptions` `object` - Global options for [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload), to be used on `vf-file` with an `ajax` prop.
 * `dateOptions` `object` - Global options for [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker), to be used on `vf-date`.
