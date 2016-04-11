@@ -73,6 +73,8 @@ The following fields are supported:
 * `vf-email` - `input[type=email]`
 * `vf-textarea` - long text
 
+  * `tinymce` `object\boolean` `optional` Use tinymce editor (>=4.0). Accepts options for tinymce, or nothing.
+
 All of the above accept optional `placeholder` and `disabled` props.
 Numeric and email fields will be validated accordingly.
 
@@ -86,7 +88,7 @@ Numeric and email fields will be validated accordingly.
    * `options` `object` `optional` Plugin options. Merged with the form-level option `dateOptions`.
 * `vf-select` - select list
 
-  * `select2` `object\boolean` `optional` Use select2. accepts options for select2, or nothing
+  * `select2` `object\boolean` `optional` Use select2 (>=4.0). Accepts options for select2, or nothing
   * `multiple` `boolean` `optional`
   * `items` `array of objects` `optional` - item format: `{value:1, text:'Option A'}`. Defaults to an empty array
   * `placeholder` `string` Default option text (value will be an empty string). Default: 'Select Option'. Displayed only for a single select, which is not a select2.
@@ -284,6 +286,7 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
 * `additionalPayload` `object` Custom data you want to send along with the form. Serves a similar purpose to that of a hidden input field
 * `sendOnlyDirtyFields` `boolean` when using AJAX form send only the dirty fields. Default: `false`
 * `select2Options` `object` - Global options for [select2](https://github.com/blueimp/jQuery-File-Upload), to be used on 'vf-select' with a 'select2'  or 'ajax-url' prop
+* `tinymceOptions` `object` - Global options for [tinymce](https://www.tinymce.com). To be used on a `vf-textarea` field with a `tinymce` prop.
 * `fileOptions` `object` - Global options for [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload), to be used on `vf-file` with an `ajax` prop.
 * `dateOptions` `object` - Global options for [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker), to be used on `vf-date`.
 * `customRules` `object` See [above](#custom-rules)
