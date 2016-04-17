@@ -271,6 +271,11 @@ Fires off after the form returned an invalid response from the server. Sends thr
 Fires off whenever a field's value is changed. Send through the new and old values.
 This allows for using fields independently of the form.
 
+`vue-formular.clicked-error`
+
+Fires off when the user clicked one of the error links in the statusbar.
+Sends through the clicked field name.
+
 ## Form Options
 
 Options are set in three layers, where the more particular overrides the more general.
