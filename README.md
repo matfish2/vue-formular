@@ -289,6 +289,7 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
 * `tinymceOptions` `object` - Global options for [tinymce](https://www.tinymce.com). To be used on a `vf-textarea` field with a `tinymce` prop.
 * `fileOptions` `object` - Global options for [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload), to be used on `vf-file` with an `ajax` prop.
 * `dateOptions` `object` - Global options for [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker), to be used on `vf-date`.
+* `successTimeout` `number` - Time in ms before hiding the success message after the form was sent using AJAX. Default: 4000
 * `customRules` `object` See [above](#custom-rules)
 * `messages` `object` see [above](#messages)
 * `texts` `object` Default:
