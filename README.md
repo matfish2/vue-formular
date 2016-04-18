@@ -81,7 +81,7 @@ Numeric and email fields will be validated accordingly.
 * `vf-date` - Datepicker (single or range).
 
    uses [daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker).
-   the `value` should be passed as a string, matching the 'YYYY-MM-DD' format, or as a moment object. The date will be sent to the server using `moment`'s [format](http://momentjs.com/docs/#/displaying/format/) method (ISO 8601)
+   the `value` should be passed as a string, matching the 'YYYY-MM-DD HH:mm:ss' format, or as a moment object. The date will be sent to the server using `moment`'s [format](http://momentjs.com/docs/#/displaying/format/) method (ISO 8601)
 
    * `range` `boolean` `optional` pick a range of dates. the `value` prop should be passed as an object with `start` and `end` properties. A similar object is sent to the server
    * `format` `string` `optional` Date presentation (using `moment`). Default: 'DD/MM/YYYY'.
