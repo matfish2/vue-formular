@@ -64,6 +64,7 @@ All fields accept the following properties:
 * `label` `string` `optional`
 * `name` `string` `required` field's identifier
 * `value` `mixed` `optional`
+* `disabled` `boolean` `optional` 
 
 The following fields are supported:
 
@@ -75,7 +76,7 @@ The following fields are supported:
 
   * `tinymce` `object\boolean` `optional` Use tinymce editor (>=4.0). Accepts options for tinymce, or nothing.
 
-All of the above accept optional `placeholder` and `disabled` props.
+All of the above accept optional `placeholder` prop.
 Numeric and email fields will be validated accordingly.
 
 * `vf-date` - Datepicker (single or range).
