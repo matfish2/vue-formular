@@ -87,6 +87,8 @@ Numeric and email fields will be validated accordingly.
    * `range` `boolean` `optional` pick a range of dates. the `value` prop should be passed as an object with `start` and `end` properties. A similar object is sent to the server
    * `format` `string` `optional` Date presentation (using `moment`). Default: 'DD/MM/YYYY'.
    * `options` `object` `optional` Plugin options. Merged with the form-level option `dateOptions`.
+   * `clearLabel` `string` `optional` Label for clearing current date. Default: 'Clear'
+
 * `vf-select` - select list
 
   * `select2` `object\boolean` `optional` Use select2 (>=4.0). Accepts options for select2, or nothing
