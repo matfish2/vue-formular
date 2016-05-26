@@ -77,6 +77,7 @@ The following fields are supported:
   * `tinymce` `object\boolean` `optional` Use tinymce editor (>=4.0). Accepts options for tinymce, or nothing.
 
 All of the above accept optional `placeholder` prop.
+All of the above have a [debounce](https://vuejs.org/guide/forms.html#debounce) prop, which defaults to 500ms.
 Numeric and email fields will be validated accordingly.
 
 * `vf-date` - Datepicker (single or range).
