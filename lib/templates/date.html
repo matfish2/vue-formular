@@ -1,4 +1,4 @@
-<div class="VF-Field--Date__datepicker">
+<div class="VF-Field--Date__datepicker"  v-bind:class="{ 'VF-Field--Date__timepicker': isTimepicker }">
     <i class="glyphicon glyphicon-calendar"></i>
     <span class="VF-Field--Date__date">{{formattedDate}}</span> <b class="caret"></b>
 <input v-if="inForm() && !$parent.ajax" type="hidden" name="{{name}}" value="{{serverFormat}}">
