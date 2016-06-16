@@ -79,9 +79,7 @@ it("buttons list", function() {
 });
 
 it("Submit", function() {
-  var submit = form.find(".VF-Submit");
-  expect(submit.length).toBe(1);
-  expect(submit.find("button[type=submit]").length).toBe(1);
+  expect(form.find("button[type=submit]").length).toBe(1);
 });
 
 

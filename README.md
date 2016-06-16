@@ -64,7 +64,7 @@ All fields accept the following properties:
 * `label` `string` `optional`
 * `name` `string` `required` field's identifier
 * `value` `mixed` `optional`
-* `disabled` `boolean` `optional` 
+* `disabled` `boolean` `optional`
 
 The following fields are supported:
 
@@ -117,7 +117,7 @@ Numeric and email fields will be validated accordingly.
   * `ajax` `boolean` `optional` - use [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload). File rules will be sent as a stringified `rules` key.
   * `options` `object` `optional` - plugin options for this field. merged with the `fileOptions` form-level option.
 
-* `vf-submit` - Submit button in a row wrapper, floated to the right. Will be disabled when the form is in pristine state
+* `vf-submit` - Submit button. Will be disabled when the form is in pristine state if `sendOnlyDirtyFields` is set to `true`
 
   * `text` `string` `optional` Button text. Default: 'Submit'
 
@@ -126,7 +126,6 @@ Note: All fields share a `fieldType` property which can be programatically used 
 ### Slots
 
 All fields have `beforeField` and `afterField` [slots](http://vuejs.org/guide/components.html#Named_Slots), which allow you to add custom HTML.
-`vf-submit` has similar `beforeButton` and `afterButton` slots.
 
 ## Validation
 

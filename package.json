@@ -1,7 +1,7 @@
 {
   "name": "vue-formular",
   "description": "a comprehensive vue.js form component",
-  "version": "0.5.9",
+  "version": "0.6.0",
   "keywords": [
     "vue",
     "form",
