@@ -54,7 +54,10 @@ For example:
       <vf-submit></vf-submit>
     </vf-form>
 
-Important: to send the form using an AJAX request, add the `ajax` property to `vf-form`, and require `vue-resource`
+By default the form is sent through as a normal synchronous request. Other options are (add as props to `vf-form`):
+
+`ajax` - Send async request. requires `vue-resource`
+`client` - Form is not sent to the server. To fetch the data listen for the `vue-formular.sent` event.
 
 ## Fields
 

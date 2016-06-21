@@ -53,7 +53,7 @@ exports.install = function(Vue, globalOptions) {
 
       if (!this.ajax) {
         var payload = this.options.additionalPayload;
-        for (key in payload) {
+        for (var key in payload) {
           this.additionalValues.push({name:key,value:payload[key]});
         }
       }
@@ -67,7 +67,7 @@ exports.install = function(Vue, globalOptions) {
           if (['requiredIf','smallerThan','greaterThan'].indexOf(rule)>-1) {
             field = field.split(":")[0];
             var foreignField = this.validation.rules[field][rule].split(":")[0];
-           
+
             if (typeof this.relatedFields[foreignField]=='undefined') {
               this.relatedFields[foreignField] = [];
             }
