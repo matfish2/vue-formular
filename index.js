@@ -7,14 +7,18 @@ exports.install = function(Vue, globalOptions) {
 
     template: require('./lib/templates/form.html'),
     props: {
+      client:{
+        type:Boolean,
+        required:false,
+        default: false
+      },
       ajax: {
         type: Boolean,
         required: false,
         default: false
       },
       action: {
-        type: String,
-        required: true
+        type: String
       },
       method: {
         type: String,
