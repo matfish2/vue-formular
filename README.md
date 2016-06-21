@@ -56,12 +56,12 @@ For example:
 
 By default the form is sent through as a normal synchronous request. Other options are (add as props to `vf-form`):
 
-`ajax` - Send async request. requires `vue-resource`
-`client` - Form is not sent to the server. To fetch the data listen for the `vue-formular.sent` event.
+* `ajax` - Send async request. requires `vue-resource`
+* `client` - Form is not sent to the server. To fetch the data listen for the `vue-formular.sent` event.
 
 ## Fields
 
-Fields can be used in a form as DIRECT children of the form, or independently (see the `change` event).
+Fields can be used in a form as direct vue children of the form, or independently (see the `change` event).
 All fields accept the following properties:
 
 * `label` `string` `optional`
