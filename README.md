@@ -96,7 +96,7 @@ Numeric and email fields will be validated accordingly.
 * `vf-select` - select list
 
   * `select2` `object\boolean` `optional` Use select2 (>=4.0). Accepts options for select2, or nothing
-  * `containerClass` `string` `optional` When using select2, use this to set a class for the container and the dropdown. The class will be preceded by the entity (e.g `modal` would generate `dropdown-modal` and `container-modal`)
+  * `container-class` `string` `optional` When using select2, use this to set a class for the container and the dropdown. The class will be preceded by the entity (e.g `modal` would generate `dropdown-modal` and `container-modal`)
   * `multiple` `boolean` `optional`
   * `items` `array of objects` `optional` - item format: `{value:1, text:'Option A'}`. Defaults to an empty array
   * `placeholder` `string` Default option text (value will be an empty string). Default: 'Select Option'. Displayed only for a single select, which is not a select2.
