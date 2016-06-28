@@ -109,19 +109,28 @@ exports.install = function(Vue, globalOptions) {
 
 Vue.component('vf-form',vfForm);
 
-Vue.component('vf-text',require('./lib/components/fields/input')("input",{type:"text"}));
-Vue.component('vf-email',require('./lib/components/fields/input')("input",{type:"email"}));
-Vue.component('vf-number',require('./lib/components/fields/input')("input",{type:"number"}));
-Vue.component('vf-password',require('./lib/components/fields/input')("input",{type:"password"}));
-Vue.component('vf-file',require('./lib/components/fields/file'));
-Vue.component('vf-textarea',require('./lib/components/fields/textarea'));
-Vue.component('vf-select',require('./lib/components/fields/select'));
-Vue.component('vf-buttons-list',require('./lib/components/fields/buttons-list'));
-Vue.component('vf-date',require('./lib/components/fields/date'));
-Vue.component('vf-checkbox',require('./lib/components/fields/checkbox'));
+Vue.component('vf-text',require('./lib/components/fields/text')());
+Vue.component('vf-email',require('./lib/components/fields/email')());
+Vue.component('vf-number',require('./lib/components/fields/number')());
+Vue.component('vf-password',require('./lib/components/fields/password')());
+Vue.component('vf-file',require('./lib/components/fields/file')());
+Vue.component('vf-textarea',require('./lib/components/fields/textarea')());
+Vue.component('vf-select',require('./lib/components/fields/select')());
+Vue.component('vf-buttons-list',require('./lib/components/fields/buttons-list')());
+Vue.component('vf-date',require('./lib/components/fields/date')());
+Vue.component('vf-checkbox',require('./lib/components/fields/checkbox')());
 
 Vue.component('vf-status-bar', require('./lib/components/status-bar'));
 Vue.component('vf-submit',require('./lib/components/submit'));
+
+Vue.partial('input',require('./lib/templates/input.html'));
+Vue.partial('buttons',require('./lib/templates/buttons-list.html'));
+Vue.partial('checkbox',require('./lib/templates/checkbox.html'));
+Vue.partial('date',require('./lib/templates/date.html'));
+Vue.partial('file',require('./lib/templates/file.html'));
+Vue.partial('select',require('./lib/templates/select.html'));
+Vue.partial('textarea',require('./lib/templates/textarea.html'));
+
 
 }
 

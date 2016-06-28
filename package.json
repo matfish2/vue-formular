@@ -1,7 +1,7 @@
 {
   "name": "vue-formular",
   "description": "a comprehensive vue.js form component",
-  "version": "0.6.46",
+  "version": "0.7.0",
   "keywords": [
     "vue",
     "form",
@@ -26,8 +26,7 @@
   },
   "browserify": {
     "transform": [
-      "stringify",
-      "require-globify"
+      "stringify"
     ]
   },
   "scripts": {

@@ -59,7 +59,7 @@ it("Textarea", function() {
 });
 
 it("buttons list", function() {
-  var lists = field("List");
+  var lists = field("Buttons");
 
   expect(lists.length).toBe(2);
   expect(lists.eq(0).find("input").length).toBe(3);

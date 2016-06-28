@@ -23,7 +23,7 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
 
 ## Option 1 (Recommended)
 
-Compilation requires `browserify` with the `stringify` and `require-globify` transforms.
+Compilation requires `browserify` with `stringify` or `webpack` with `html-loader`.
 
     npm install vue-formular
 
