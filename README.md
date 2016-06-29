@@ -258,9 +258,10 @@ To display more than one error, return an array similar to this:
 
 ## Methods
 
-Field methods can be called by applying a [v-ref](https://vuejs.org/api/#v-ref) to the field and fetching it from the `$refs` array.
+Field methods can be called by applying a [v-ref](https://vuejs.org/api/#v-ref) to the field and fetching it from the `$refs` object.
 
-`setValue(value)` Programatically set a value on a field. The view will be updated accordingly.
+* `setValue(value)` Programatically set a value on a field. The view will be updated accordingly.
+* `focus()` 
 
 ## Events
 
