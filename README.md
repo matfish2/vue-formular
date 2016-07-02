@@ -10,6 +10,7 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
 - [Usage](#usage)
     - [Fields](#fields)
     - [Validation](#validation)
+    - [Methods](#methods)
     - [Events](#events)
     - [Custom Fields](#custom-fields)
 - [Form Options](#form-options)
@@ -255,6 +256,13 @@ To display more than one error, return an array similar to this:
           message: 'The password must contain at least 6 characters'
         }
       ]
+
+## Methods
+
+Field methods can be called by applying a [v-ref](https://vuejs.org/api/#v-ref) to the field and fetching it from the `$refs` object.
+
+* `setValue(value)` Programatically set a value on a field. The view will be updated accordingly.
+* `focus()` 
 
 ## Events
 
