@@ -11,6 +11,7 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
     - [Fields](#fields)
     - [Validation](#validation)
     - [Events](#events)
+    - [Custom Fields](#custom-fields)
 - [Form Options](#form-options)
 
 # Dependencies
@@ -286,6 +287,95 @@ Global change event. Sends through the name of the changed field, in addition to
 
 Fires off when the user clicked one of the error links in the statusbar.
 Sends through the clicked field name.
+
+## Custom Fields
+
+Here is how you can go about creating new types of fields.
+Let's create a time range picker.
+
+Start by creating a `timerange.html` HTML template:
+
+    <div class="timerangepicker">
+
+      <div class="time-select">
+        <label for="from">From</label>
+        <select name="from" v-model="from">
+          <option value="Select Time"></option>
+          <option v-for="time in times" value="{{time}}">{{time}}</option>
+          </select>
+      </div>
+
+      <div class="time-select">
+        <label for="to">To</label>
+        <select name="to" v-model="to">
+         <option value="Select Time"></option>
+         <option v-for="time in times" value="{{time}}">{{time}}</option>
+       </select>
+     </div>
+
+    </div>
+
+Then create a `timerange.js` file:
+
+    var merge = require('merge');
+    var Field = require('vue-formular/lib/components/fields/field');
+
+    module.exports = function() {
+     return merge.recursive(Field(), {
+      data:function() {
+        return {
+          fieldType:'timerange',
+          times: getTimes(),
+          from:'',
+          to:''
+        }
+      },
+      ready: function() {
+        this.$set('rules.timerange', true);
+      },
+      computed: {
+        value: function() {
+          if (!this.from || !this.to) return '';
+          return this.from + '-' + this.to;
+        }
+      }
+    });
+
+    }
+
+    function getTimes() {
+      var times = [];
+        for (var i=0; i<24; i++) {
+          for (var j=0; j<60; j = j+30) {
+            times.push(('0' + i).slice(-2) + ":" + ('0' + j).slice(-2));
+          }
+        }
+
+        return times;
+    }
+
+Note that we extend the main abstract field component, and name the `fieldType` property with the same name as the partial we are about to register.
+Now, let's add the `timerange` rule to prevent an invalid range:
+
+     customRules: {
+            timerange: function(field) {
+              if (!field.value) return true;
+
+              var pieces = field.value.split('-');
+              pieces = pieces.map(function(piece) {
+                return parseInt(piece.replace(':',''));
+              });
+              return pieces[1]>pieces[0];
+            }
+          }
+
+Lastly, register the component and the partial:
+
+    Vue.component('vf-timerange', require('./timerange')());
+    Vue.partial('timerange', require('./timerange.html'));
+
+Note: if you are sending the form using a normal request (i.e not ajax or client-only), you need to add a hidden field to the template which will recieve the value.
+You can find an example in the date component (`date.html`)
 
 ## Form Options
 
