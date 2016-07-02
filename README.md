@@ -19,7 +19,7 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
 
 * Vue.js (>=1.0)
 * Bootstrap (CSS)
-* vue-resource (When submitting via AJAX)
+* vue-resource (>=0.9.0) (When submitting via AJAX)
 
 # Installation
 
@@ -97,7 +97,7 @@ Numeric and email fields will be validated accordingly.
 
 * `vf-select` - select list
 
-  * `select2` `object\boolean` `optional` Use select2 (>=4.0). Accepts options for select2, or nothing
+  * `select2` `object\boolean` `optional` Use select2 (4.0.0). Accepts options for select2, or nothing
   * `container-class` `string` `optional` When using select2, use this to set a class for the container and the dropdown. The class will be preceded by the entity (e.g `modal` would generate `dropdown-modal` and `container-modal`)
   * `multiple` `boolean` `optional`
   * `items` `array of objects` `optional` - item format: `{value:1, text:'Option A'}`. Defaults to an empty array
@@ -262,7 +262,7 @@ To display more than one error, return an array similar to this:
 Field methods can be called by applying a [v-ref](https://vuejs.org/api/#v-ref) to the field and fetching it from the `$refs` object.
 
 * `setValue(value)` Programatically set a value on a field. The view will be updated accordingly.
-* `focus()` 
+* `focus()`
 
 ## Events
 
