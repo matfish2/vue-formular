@@ -83,7 +83,6 @@ exports.install = function(Vue, globalOptions) {
         }
       }
 
-      console.log(this.relatedFields);
     }
 
     for (var trigger in this.triggers) {

@@ -18,15 +18,15 @@
         validation:validation,
         items: [
         {
-            value:'1',
+            id:'1',
             text:'itemA'
         },
         {
-            value:'2',
+            id:'2',
             text:'itemB'
         },
         {
-            value:'3',
+            id:'3',
             text:'itemC'
         }
         ]

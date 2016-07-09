@@ -23,10 +23,10 @@ describe('Validation', function(){
             email: {
                 email:true,
                 remote:'available',
-                requiredIf:'list:1,2'
+                requiredAndShownIf:'list:1,2'
             },
                required_if_multiple: {
-                requiredIf:'list_multiple:2,3'
+                requiredAndShownIf:'list_multiple:2,3'
             },
             between_numeric: {
               integer:true,
