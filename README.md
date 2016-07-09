@@ -65,11 +65,12 @@ By default the form is sent through as a normal synchronous request. Other optio
 * `ajax` - Send async request. requires `vue-resource`
 * `client` - Form is not sent to the server. To fetch the data listen for the `vue-formular.sent` event.
 
-Another optional prop for the form is `triggers`. It is used to specify fields whose display depnds on the values of other fields.
+Another optional prop for the form is `triggers`. It is used to specify fields whose display depends on the values of other fields.
 The syntax is similar to that of the validation rules `requiredIf` and `requiredAndShownIf`:
-    {
-      triggeredFieldName:'triggeringField:value1,value2'
-    }
+
+      {
+        triggeredFieldName:'triggeringField:value1,value2'
+      }
 
 To trigger with any truthy value simply omit the values list.
 
@@ -122,6 +123,7 @@ Numeric and email fields will be validated accordingly.
   * `filter-by` `string` `optional` Dynamically filter list options by another select field.
   Recieves the name of the other field. The list items should each have a key with the same name, whose value will be compared against the filtering field's value. When the filtering field has no value all items are presented.
   When the list is fetched remotely the filtering field value is sent as a request parameter
+  Note: Due to issues with dynamically updating data passed to select2 on v4.0.0 (https://github.com/select2/select2/issues/2830), This option will currently not work on a `select2` with local data (i.e it will work on a noraml select or select2 with `ajax-url`).
 
 * `vf-checkbox` - a single boolean checkbox
 

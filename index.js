@@ -59,39 +59,15 @@ exports.install = function(Vue, globalOptions) {
       var options = merge.recursive(defaultOptions, globalOptions);
       this.options = merge.recursive(options, this.options);
 
-      if (!this.ajax) {
+      if (!this.ajax && !this.client) {
         var payload = this.options.additionalPayload;
         for (var key in payload) {
           this.additionalValues.push({name:key,value:payload[key]});
         }
       }
 
-      if (this.validation && this.validation.rules) {
-
-      for (var field in this.validation.rules) {
-        for (var rule in this.validation.rules[field]) {
-
-          if (['requiredIf','requiredAndShownIf','smallerThan','greaterThan'].indexOf(rule)>-1) {
-            field = field.split(":")[0];
-            var foreignField = this.validation.rules[field][rule].split(":")[0];
-
-            if (typeof this.relatedFields[foreignField]=='undefined') {
-              this.relatedFields[foreignField] = [];
-            }
-            this.relatedFields[foreignField].push(field);
-          }
-        }
-      }
-
-    }
-
-    for (var trigger in this.triggers) {
-      var triggerField = this.triggers[trigger].split(":")[0];
-            if (typeof this.triggeredFields[triggerField]=='undefined') {
-              this.triggeredFields[triggerField] = [];
-            }
-            this.triggeredFields[triggerField].push(trigger);
-    }
+      this.registerInterfieldsRules();
+      this.registerTriggers();
 
     },
     data: function() {
@@ -119,7 +95,9 @@ exports.install = function(Vue, globalOptions) {
       formData:require('./lib/methods/form-data'),
       getField:require('./lib/methods/get-field'),
       showAllErrors:require('./lib/methods/show-all-errors'),
-      reinitForm:require('./lib/methods/reinit-form')
+      reinitForm:require('./lib/methods/reinit-form'),
+      registerInterfieldsRules: require('./lib/methods/register-interfields-rules'),
+      registerTriggers: require('./lib/methods/register-triggers')
     }
 
   }
