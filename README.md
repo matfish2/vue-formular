@@ -2,6 +2,10 @@
 
 [![npm version](https://badge.fury.io/js/vue-formular.svg)](https://badge.fury.io/js/vue-formular) [![Build Status](https://travis-ci.org/matfish2/vue-formular.svg?branch=master)](https://travis-ci.org/matfish2/vue-formular)
 
+Breaking change on version 0.9.0:
+* In order to match select2 format the `items` prop of `vf-select` (and `vf-button-list`) now recieves objects with the following format:`{id:1, text:'Option A'}`, instead of `{value:1, text:'Option A'}`
+* The `select2` prop of `vf-select` is now a boolean. Options should be passed through the new `options` prop.
+
 This vue.js package offers a comperhensive solution for HTML form management, including presentation, validation and (optional) AJAX submission.
 The presentation is based on [Bootstrap's form component](http://getbootstrap.com/css/#forms).
 
@@ -61,6 +65,14 @@ By default the form is sent through as a normal synchronous request. Other optio
 * `ajax` - Send async request. requires `vue-resource`
 * `client` - Form is not sent to the server. To fetch the data listen for the `vue-formular.sent` event.
 
+Another optional prop for the form is `triggers`. It is used to specify fields whose display depnds on the values of other fields.
+The syntax is similar to that of the validation rules `requiredIf` and `requiredAndShownIf`:
+    {
+      triggeredFieldName:'triggeringField:value1,value2'
+    }
+
+To trigger with any truthy value simply omit the values list.
+
 ## Fields
 
 Fields can be used in a form as direct vue children of the form, or independently (see the `change` event).
@@ -97,10 +109,11 @@ Numeric and email fields will be validated accordingly.
 
 * `vf-select` - select list
 
-  * `select2` `object\boolean` `optional` Use select2 (4.0.0). Accepts options for select2, or nothing
+  * `select2` `boolean` `optional` Use select2 (4.0.0 **Only**)
+  * `options` `object` `optional` Select2 options
   * `container-class` `string` `optional` When using select2, use this to set a class for the container and the dropdown. The class will be preceded by the entity (e.g `modal` would generate `dropdown-modal` and `container-modal`)
   * `multiple` `boolean` `optional`
-  * `items` `array of objects` `optional` - item format: `{value:1, text:'Option A'}`. Defaults to an empty array
+  * `items` `array of objects` `optional` - item format: `{id:1, text:'Option A'}`. Defaults to an empty array
   * `placeholder` `string` Default option text (value will be an empty string). Default: 'Select Option'. Displayed only for a single select, which is not a select2.
   * `no-default` `boolean` `optional` Don't display the default option
   * `ajax-url` `string` `optional` Fetch options from remote server using this url.
@@ -185,6 +198,7 @@ Supported rules:
 
 * `requiredIf` `string` - make the field required only if another field was filled with a value (typically a select or checkbox).
 The field would only display when required. To set specific values for requiring the field use the following format: `otherField:val1, val2`
+* `requiredAndShownIf` `string` - same as `requiredIf`, excecpt that the field also is hidden when it is not required.
 * `email` `boolean` - Automatically set to `true` for `vf-email`
 * `number` `boolean` - Automatically set to `true` for `vf-number`
 * `min`,`max`,`between` `number` -

@@ -28,9 +28,17 @@ exports.install = function(Vue, globalOptions) {
       validation: {
         type: Object,
         required:false,
-         default: function() {
+        default: function() {
           return {
+          }
         }
+      },
+      triggers:{
+        type: Object,
+        required:false,
+        default: function() {
+          return {
+          }
         }
       },
       options:{
@@ -38,7 +46,7 @@ exports.install = function(Vue, globalOptions) {
         required:false,
         default: function() {
           return {
-        }
+          }
         }
       }
     },
@@ -58,25 +66,34 @@ exports.install = function(Vue, globalOptions) {
         }
       }
 
-      if (!this.validation || !this.validation.rules)
-        return;
+      if (this.validation && this.validation.rules) {
 
       for (var field in this.validation.rules) {
         for (var rule in this.validation.rules[field]) {
 
-          if (['requiredIf','smallerThan','greaterThan'].indexOf(rule)>-1) {
+          if (['requiredIf','requiredAndShownIf','smallerThan','greaterThan'].indexOf(rule)>-1) {
             field = field.split(":")[0];
             var foreignField = this.validation.rules[field][rule].split(":")[0];
 
             if (typeof this.relatedFields[foreignField]=='undefined') {
               this.relatedFields[foreignField] = [];
             }
-
             this.relatedFields[foreignField].push(field);
-
           }
         }
       }
+
+      console.log(this.relatedFields);
+    }
+
+    for (var trigger in this.triggers) {
+      var triggerField = this.triggers[trigger].split(":")[0];
+            if (typeof this.triggeredFields[triggerField]=='undefined') {
+              this.triggeredFields[triggerField] = [];
+            }
+            this.triggeredFields[triggerField].push(trigger);
+    }
+
     },
     data: function() {
       return {
@@ -86,16 +103,17 @@ exports.install = function(Vue, globalOptions) {
         errors:[],
         serverErrors:[],
         relatedFields:{},
+        triggeredFields:{},
         status:'danger',
         statusbarMessage:''
       }
     },
     computed: {
-        labelClass:require('./lib/computed/label-class'),
-        fieldClass:require('./lib/computed/field-class'),
-        pristine: function() {
-          return this.fields.length==0;
-        }
+      labelClass:require('./lib/computed/label-class'),
+      fieldClass:require('./lib/computed/field-class'),
+      pristine: function() {
+        return this.fields.length==0;
+      }
     },
     methods: {
       submit:require('./lib/methods/submit'),
@@ -103,33 +121,33 @@ exports.install = function(Vue, globalOptions) {
       getField:require('./lib/methods/get-field'),
       showAllErrors:require('./lib/methods/show-all-errors'),
       reinitForm:require('./lib/methods/reinit-form')
-}
+    }
 
-}
+  }
 
-Vue.component('vf-form',vfForm);
+  Vue.component('vf-form',vfForm);
 
-Vue.component('vf-text',require('./lib/components/fields/text')());
-Vue.component('vf-email',require('./lib/components/fields/email')());
-Vue.component('vf-number',require('./lib/components/fields/number')());
-Vue.component('vf-password',require('./lib/components/fields/password')());
-Vue.component('vf-file',require('./lib/components/fields/file')());
-Vue.component('vf-textarea',require('./lib/components/fields/textarea')());
-Vue.component('vf-select',require('./lib/components/fields/select')());
-Vue.component('vf-buttons-list',require('./lib/components/fields/buttons-list')());
-Vue.component('vf-date',require('./lib/components/fields/date')());
-Vue.component('vf-checkbox',require('./lib/components/fields/checkbox')());
+  Vue.component('vf-text',require('./lib/components/fields/text')());
+  Vue.component('vf-email',require('./lib/components/fields/email')());
+  Vue.component('vf-number',require('./lib/components/fields/number')());
+  Vue.component('vf-password',require('./lib/components/fields/password')());
+  Vue.component('vf-file',require('./lib/components/fields/file')());
+  Vue.component('vf-textarea',require('./lib/components/fields/textarea')());
+  Vue.component('vf-select',require('./lib/components/fields/select')());
+  Vue.component('vf-buttons-list',require('./lib/components/fields/buttons-list')());
+  Vue.component('vf-date',require('./lib/components/fields/date')());
+  Vue.component('vf-checkbox',require('./lib/components/fields/checkbox')());
 
-Vue.component('vf-status-bar', require('./lib/components/status-bar'));
-Vue.component('vf-submit',require('./lib/components/submit'));
+  Vue.component('vf-status-bar', require('./lib/components/status-bar'));
+  Vue.component('vf-submit',require('./lib/components/submit'));
 
-Vue.partial('input',require('./lib/templates/input.html'));
-Vue.partial('buttons',require('./lib/templates/buttons-list.html'));
-Vue.partial('checkbox',require('./lib/templates/checkbox.html'));
-Vue.partial('date',require('./lib/templates/date.html'));
-Vue.partial('file',require('./lib/templates/file.html'));
-Vue.partial('select',require('./lib/templates/select.html'));
-Vue.partial('textarea',require('./lib/templates/textarea.html'));
+  Vue.partial('input',require('./lib/templates/input.html'));
+  Vue.partial('buttons',require('./lib/templates/buttons-list.html'));
+  Vue.partial('checkbox',require('./lib/templates/checkbox.html'));
+  Vue.partial('date',require('./lib/templates/date.html'));
+  Vue.partial('file',require('./lib/templates/file.html'));
+  Vue.partial('select',require('./lib/templates/select.html'));
+  Vue.partial('textarea',require('./lib/templates/textarea.html'));
 
 
 }

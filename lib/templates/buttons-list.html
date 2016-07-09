@@ -1,6 +1,6 @@
 <div v-for="item in items" class="{{type}}">
   <label>
-    <input :disabled="disabled" v-model="value" name="{{name}}{{arraySymbol}}" type="{{type}}" value="{{item.value}}">
+    <input :disabled="disabled" v-model="value" name="{{name}}{{arraySymbol}}" type="{{type}}" value="{{item.id}}">
     {{item.text}}
   </label>
 </div>

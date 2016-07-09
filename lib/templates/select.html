@@ -1,5 +1,5 @@
- <select name="{{name}}{{arraySymbol}}" :disabled="disabled" v-model="value" multiple={{multiple}} class="form-control">
-   <option v-if="!noDefault && !select2 && !multiple" value="">{{placeholder}}</option>
-   <option v-for="item in items" v-if="passesFilter(item)" value="{{item.value}}">{{item.text}}</option>
-   <option v-if="selected && ajaxUrl" v-for="item in selected" value="{{item.value}}" selected>{{item.text}}</option>
+ <select name="{{name}}{{arraySymbol}}" :disabled="disabled" value="{id:1,text:'dds'}" v-model="value" multiple={{multiple}} class="form-control">
+   <option v-if="!noDefault && !multiple" value="">{{placeholder}}</option>
+   <option v-for="item in items" v-if="!select2 && passesFilter(item)" value="{{item.id}}">{{item.text}}</option>
+   <option v-if="selected && ajaxUrl" v-for="item in selected" value="{{item.id}}" selected>{{item.text}}</option>
  </select>
