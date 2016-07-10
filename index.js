@@ -80,7 +80,8 @@ exports.install = function(Vue, globalOptions) {
         relatedFields:{},
         triggeredFields:{},
         status:'danger',
-        statusbarMessage:''
+        statusbarMessage:'',
+        sending:false
       }
     },
     computed: {
