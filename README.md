@@ -133,6 +133,7 @@ Numeric and email fields will be validated accordingly.
 
     * `multiple` `boolean` `optional`
     * `items` same as in `vf-select`
+    * `filter-by` same as in `vf-select`
 
 * `vf-file` -
   * `ajax` `boolean` `optional` - use [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload). File rules will be sent as a stringified `rules` key.
