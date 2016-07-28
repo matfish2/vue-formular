@@ -1,0 +1,3 @@
+    <i class="glyphicon glyphicon-calendar"></i>
+    <span class="VF-Field--Date__date">{{formattedDate}}</span> <b class="caret"></b>
+<input v-if="inForm() && !$parent.ajax && !$parent.client" type="hidden" name="{{name}}" value="{{serverFormat}}">

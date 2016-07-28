@@ -126,7 +126,8 @@ exports.install = function(Vue, globalOptions) {
   Vue.partial('file',require('./lib/templates/file.html'));
   Vue.partial('select',require('./lib/templates/select.html'));
   Vue.partial('textarea',require('./lib/templates/textarea.html'));
-
+  Vue.partial('date-span',require('./lib/templates/date-span.html'));
+  Vue.partial('date-input',require('./lib/templates/date-input.html'));
 
 }
 

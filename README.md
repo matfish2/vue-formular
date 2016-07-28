@@ -2,10 +2,6 @@
 
 [![npm version](https://badge.fury.io/js/vue-formular.svg)](https://badge.fury.io/js/vue-formular) [![Build Status](https://travis-ci.org/matfish2/vue-formular.svg?branch=master)](https://travis-ci.org/matfish2/vue-formular)
 
-Breaking change on version 0.9.0:
-* In order to match select2 format the `items` prop of `vf-select` (and `vf-button-list`) now recieves objects with the following format:`{id:1, text:'Option A'}`, instead of `{value:1, text:'Option A'}`
-* The `select2` prop of `vf-select` is now a boolean. Options should be passed through the new `options` prop.
-
 This vue.js package offers a comperhensive solution for HTML form management, including presentation, validation and (optional) AJAX submission.
 The presentation is based on [Bootstrap's form component](http://getbootstrap.com/css/#forms).
 
@@ -107,6 +103,7 @@ Numeric and email fields will be validated accordingly.
    * `format` `string` `optional` Date presentation (using `moment`). Default: 'DD/MM/YYYY'.
    * `options` `object` `optional` Plugin options. Merged with the form-level option `dateOptions`.
    * `clearLabel` `string` `optional` Label for clearing current date. Default: 'Clear'
+   * `no-input` `boolean` `optional` Use a `span` element rather than an `input`
 
 * `vf-select` - select list
 
