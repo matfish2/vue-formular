@@ -1,4 +1,4 @@
  <select name="{{name}}{{arraySymbol}}" :disabled="disabled"  v-model="value" multiple={{multiple}} class="form-control">
    <option v-if="!noDefault && !multiple" value="">{{placeholder}}</option>
-   <option v-for="item in items" v-if="(!select2 || ajaxUrl) && passesFilter(item)" value="{{item.id}}">{{item.text}}</option>
+   <option v-for="item in items" v-if="(!select2 || ajaxUrl || html) && passesFilter(item)" value="{{item.id}}">{{item.text}}</option>
  </select>

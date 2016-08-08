@@ -109,6 +109,7 @@ Numeric and email fields will be validated accordingly.
 
   * `select2` `boolean` `optional` Use select2 (4.0.0 **Only**)
   * `options` `object` `optional` Select2 options
+  * `html` `boolean` By default items are passed directly to the select2 constructor, which is tasked with rendering the actual html. Use this option to render the items directly in the template. (see `filter-by` note for a case this might be useful)
   * `container-class` `string` `optional` When using select2, use this to set a class for the container and the dropdown. The class will be preceded by the entity (e.g `modal` would generate `dropdown-modal` and `container-modal`)
   * `multiple` `boolean` `optional`
   * `items` `array of objects` `optional` - item format: `{id:1, text:'Option A'}`. Defaults to an empty array.
@@ -120,7 +121,7 @@ Numeric and email fields will be validated accordingly.
   * `filter-by` `string` `optional` Dynamically filter list options by another select field.
   Recieves the name of the other field. The list items should each have a key with the same name, whose value will be compared against the filtering field's value. When the filtering field has no value all items are presented.
   When the list is fetched remotely the filtering field value is sent as a request parameter
-  Note: Due to issues with dynamically updating data passed to select2 on v4.0.0 (https://github.com/select2/select2/issues/2830), This option will currently not work on a `select2` with local data (i.e it will work on a noraml select or select2 with `ajax-url`).
+  Note: Due to issues with dynamically updating data passed to select2 on v4.0.0 (https://github.com/select2/select2/issues/2830), This option will currently work on a `select2` with local data only when the `html` prop is set to `true`.
 
 * `vf-checkbox` - a single boolean checkbox
 
