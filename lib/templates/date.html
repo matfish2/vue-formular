@@ -1,3 +1,5 @@
-<div class="VF-Field--Date__datepicker" v-bind:class="{ 'VF-Field--Date__timepicker': isTimepicker }">
+<div class="VF-Field--Date__datepicker" v-bind:class="{ 'VF-Field--Date__timepicker': isTimepicker,
+                                                       'date__input': type=='date-input',
+                                                       'date__span': type!=='date-input' }">
 	<partial :name="type"></partial>
 </div>
