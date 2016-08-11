@@ -11,6 +11,7 @@ The presentation is based on [Bootstrap's form component](http://getbootstrap.co
     - [Fields](#fields)
     - [Validation](#validation)
     - [Methods](#methods)
+    - [Form Properties](#form-properties)
     - [Events](#events)
     - [Custom Fields](#custom-fields)
 - [Form Options](#form-options)
@@ -278,6 +279,13 @@ Field methods can be called by applying a [v-ref](https://vuejs.org/api/#v-ref) 
 
 * `setValue(value)` Programatically set a value on a field. The view will be updated accordingly.
 * `focus()`
+
+## Form Properties
+
+The following properties belong to the form component, and can be fetched by applying a `v-ref` to `vf-form`
+
+* `hasErrors` `boolean` Does the form contain any errors?
+* `pristine` `boolean` When using `sendOnlyDirtyFields`, is the form pristine?
 
 ## Events
 

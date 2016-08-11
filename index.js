@@ -87,6 +87,7 @@ exports.install = function(Vue, globalOptions) {
     computed: {
       labelClass:require('./lib/computed/label-class'),
       fieldClass:require('./lib/computed/field-class'),
+      hasErrors: require('./lib/computed/has-errors'),
       pristine: function() {
         return this.fields.length==0;
       }
