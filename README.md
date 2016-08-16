@@ -137,6 +137,14 @@ Numeric and email fields will be validated accordingly.
 * `vf-file` -
   * `ajax` `boolean` `optional` - use [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload). File rules will be sent as a stringified `rules` key.
   * `options` `object` `optional` - plugin options for this field. merged with the `fileOptions` form-level option.
+  * `dest` `optional` `string` Upload destination to be sent along with the request. Default:'/'
+  * `valueKey` the key in the response, containing the value to be set (i.e the file name). Defaults to `value`
+  * `done` `function` `optional` called when the upload is finished successfully. Defaults to getting and setting the value of the field according to the `valueKey` prop. 
+  * `error` `function` `optional` called when an error as occured. To trigger this method throw an exception on the server-side. Default (uses `bootbox`):
+
+        function(e, data) {
+              bootbox.alert(e.responseJSON.error.message);
+        } 
 
 * `vf-submit` - Submit button. Will be disabled when the form is in pristine state if `sendOnlyDirtyFields` is set to `true`
 
