@@ -133,6 +133,7 @@ Numeric and email fields will be validated accordingly.
     * `multiple` `boolean` `optional`
     * `items` same as in `vf-select`
     * `filter-by` same as in `vf-select`
+    * `toggle-texts` Texts to use for the toggle control, which allows for selecting/unselecting all items when `multiple` is set to `true`. Default: `{select:'Select All', unselect:'Unselect All'}`. When the field is embedded in a form it is better to use the `texts` option of the form instead.
 
 * `vf-file` -
   * `ajax` `boolean` `optional` - use [JQuery File Upload](https://github.com/blueimp/jQuery-File-Upload). File rules will be sent as a stringified `rules` key.
@@ -443,6 +444,9 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
           sending:'Sending Form...',
           sent:'Form was successfully sent', // this will be presented in case a string is not returned from the server
           singleError:'an error was found:', // status bar errors list title
-          errors:'{0} errors were found:'
+          errors:'{0} errors were found:',
+          // texts for toggling checkbox list values:
+          selectAll:'Select All', 
+          unselectAll:'Unselect All'
         }
 

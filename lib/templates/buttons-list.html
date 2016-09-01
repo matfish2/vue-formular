@@ -1,6 +1,10 @@
+<span v-if="multiple" class="pull-right btn btn-link" @click="toggle()">{{toggleText}}</span>
+<div class="VF-Buttons__wrapper">
 <div v-for="item in items" v-if="passesFilter(item)" class="{{type}}">
   <label>
     <input :disabled="disabled" v-model="value" name="{{name}}{{arraySymbol}}" type="{{type}}" value="{{item.id}}">
     {{item.text}}
   </label>
+</div>	
 </div>
+
