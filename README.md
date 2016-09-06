@@ -425,6 +425,7 @@ Options are set in three layers, where the more particular overrides the more ge
 2. User-defined defaults for the global Vue Instance. Passed as the second paramter to the `Use` statement.
 3. Options for a single form, passed through the `options` prop.
 
+* `beforeSubmit` `function` This callback allows you to defer submission or prevent it altogether depending on the result of the callback. The callback MUST return a promise object - native or JQuery's Deffered. If and when the promise is resolved the form will be submitted. If it is rejected, the form will not be submitted.  
 * `layout` `string` Bootstrap's form layout class. Defaults to a vertical block display. other options are `form-horizontal` and `form-inline`
 When using a layout other than `form-horizontal` adjust the `top` rule of the `form-control-feedback` class to get the feedback icon aligned with the field.
 * `labelWidth` `number` relevant only for horizontal layout. The number of grid columns allocated for the label. Defaults to `3`.
