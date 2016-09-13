@@ -316,7 +316,7 @@ Fires off after the form returned an invalid response from the server. Sends thr
 
 `vue-formular.change::field_name`
 
-Fires off whenever a field's value is changed. Send through the new and old values.
+Fires off whenever a field's value is changed. Send through the name of the field, as well as new and old values.
 This allows for using fields independently of the form.
 
 `vue-formular.change`
