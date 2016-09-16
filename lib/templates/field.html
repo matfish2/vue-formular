@@ -1,6 +1,6 @@
    <div v-show="shouldShow" id="{{name}}" class="VF VF-Field form-group" :class="fieldClasses">
-   <label v-if="hasLabel" class="VF-Field__label control-label" :class="$parent.labelClass" for="{{name}}">{{{label}}}</label>
-     <div class="VF-Field__wrapper" :class="hasLabel?$parent.fieldClass:''">
+   <label v-if="hasLabel" class="VF-Field__label control-label" :class="getForm().labelClass" for="{{name}}">{{{label}}}</label>
+     <div class="VF-Field__wrapper" :class="hasLabel?getForm().fieldClass:''">
       <slot name="beforeField"></slot>
       <partial :name="partial"></partial>
       <span v-if="hasFeedback" class="glyphicon glyphicon-{{feedbackIcon}} form-control-feedback" aria-hidden="true"></span>
