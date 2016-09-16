@@ -81,6 +81,7 @@ All fields accept the following properties:
 * `label` `string` `optional`
 * `name` `string` `required` field's identifier
 * `value` `mixed` `optional`
+* `required` `boolean` `optional`
 * `disabled` `boolean` `optional`
 
 The following fields are supported:
