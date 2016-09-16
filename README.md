@@ -196,6 +196,10 @@ Option `b` example:
 
     <vf-text label="Username:" name="username" :rules="{required:true, min:6}"></vf-text>
 
+The `required` rule can also be passed as a prop. E.g:
+
+    <vf-text label="Username:" name="username" required></vf-text>
+
 Supported rules:
 
 * `required` `boolean` required fields will be given a unique class you can use to mark the field as required. E.g:
