@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/vue-formular.svg)](https://badge.fury.io/js/vue-formular) [![Build Status](https://travis-ci.org/matfish2/vue-formular.svg?branch=master)](https://travis-ci.org/matfish2/vue-formular)
 
+Note: As of version 0.9.6 Fields no longer have to be direct children of `vf-form` and can be nested in other components as many levels deep as you want.
+
 This vue.js package offers a comperhensive solution for HTML form management, including presentation, validation and (optional) AJAX submission.
 The presentation is based on [Bootstrap's form component](http://getbootstrap.com/css/#forms).
 
@@ -73,7 +75,7 @@ To trigger with any truthy value simply omit the values list.
 
 ## Fields
 
-Fields can be used in a form as direct vue children of the form, or independently (see the `change` event).
+Fields can be used in a form as descendants of the form, or independently (see the `change` event).
 All fields accept the following properties:
 
 * `label` `string` `optional`
@@ -87,6 +89,9 @@ The following fields are supported:
 * `vf-number` - `input[type=number]`
 * `vf-password` - `input[type=password]`
 * `vf-email` - `input[type=email]`
+
+All input fields accept an optional `lazy` prop, which signifies that the value for this field in only synced on change rather than on each key stroke (see [here](https://vuejs.org/guide/forms.html#lazy)).
+
 * `vf-textarea` - long text
 
   * `tinymce` `object\boolean` `optional` Use tinymce editor (>=4.0). Accepts options for tinymce, or nothing.
@@ -140,12 +145,12 @@ Numeric and email fields will be validated accordingly.
   * `options` `object` `optional` - plugin options for this field. merged with the `fileOptions` form-level option.
   * `dest` `optional` `string` Upload destination to be sent along with the request. Default:'/'
   * `valueKey` the key in the response, containing the value to be set (i.e the file name). Defaults to `value`
-  * `done` `function` `optional` called when the upload is finished successfully. Defaults to getting and setting the value of the field according to the `valueKey` prop. 
+  * `done` `function` `optional` called when the upload is finished successfully. Defaults to getting and setting the value of the field according to the `valueKey` prop.
   * `error` `function` `optional` called when an error as occured. To trigger this method throw an exception on the server-side. Default (uses `bootbox`):
 
         function(e, data) {
               bootbox.alert(e.responseJSON.error.message);
-        } 
+        }
 
 * `vf-submit` - Submit button. Will be disabled when the form is in pristine state if `sendOnlyDirtyFields` is set to `true`
 
@@ -425,7 +430,7 @@ Options are set in three layers, where the more particular overrides the more ge
 2. User-defined defaults for the global Vue Instance. Passed as the second paramter to the `Use` statement.
 3. Options for a single form, passed through the `options` prop.
 
-* `beforeSubmit` `function` This callback allows you to defer submission or prevent it altogether depending on the result of the callback. The callback MUST return a promise object - native or JQuery's Deffered. If and when the promise is resolved the form will be submitted. If it is rejected, the form will not be submitted.  
+* `beforeSubmit` `function` This callback allows you to defer submission or prevent it altogether depending on the result of the callback. The callback MUST return a promise object - native or JQuery's Deffered. If and when the promise is resolved the form will be submitted. If it is rejected, the form will not be submitted.
 * `layout` `string` Bootstrap's form layout class. Defaults to a vertical block display. other options are `form-horizontal` and `form-inline`
 When using a layout other than `form-horizontal` adjust the `top` rule of the `form-control-feedback` class to get the feedback icon aligned with the field.
 * `labelWidth` `number` relevant only for horizontal layout. The number of grid columns allocated for the label. Defaults to `3`.
@@ -447,7 +452,7 @@ When using a layout other than `form-horizontal` adjust the `top` rule of the `f
           singleError:'an error was found:', // status bar errors list title
           errors:'{0} errors were found:',
           // texts for toggling checkbox list values:
-          selectAll:'Select All', 
+          selectAll:'Select All',
           unselectAll:'Unselect All'
         }
 
