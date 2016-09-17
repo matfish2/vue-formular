@@ -54,10 +54,12 @@ For example:
 
     <vf-form action="process-form" method="POST" :validation="validation" :options="options">
       <vf-status-bar></vf-status-bar>
-      <vf-text label="User name:" name="username"></vf-text>
-      <vf-password label="Password:" name="password"></vf-password>
+      <vf-text label="User name:" name="username" v-ref:username></vf-text>
+      <vf-password label="Password:" name="password" v-ref:password></vf-password>
       <vf-submit></vf-submit>
     </vf-form>
+
+In order to make field retrieval faster, it is highly recommended to use a `v-ref` with the same value as the `name` property.
 
 By default the form is sent through as a normal synchronous request. Other options are (add as props to `vf-form`):
 
