@@ -296,14 +296,19 @@ To display more than one error, return an array similar to this:
 
 ## Methods
 
-Field methods can be called by applying a [v-ref](https://vuejs.org/api/#v-ref) to the field and fetching it from the `$refs` object.
+ Methods can be called by applying a [v-ref](https://vuejs.org/api/#v-ref) to the relevant component and fetching it from the `$refs` object.
+
+### Form Methods
+
+* `childrenOf(ref)` get all fields which are children of a given ref. This can be used to perform actions (such as reset) on a fieldset
+
+### Field Methods
 
 * `setValue(value)` Programatically set a value on a field. The view will be updated accordingly.
+* `reset()` reset the field to an empty value, and set dirty to `false`
 * `focus()`
 
 ## Form Properties
-
-The following properties belong to the form component, and can be fetched by applying a `v-ref` to `vf-form`
 
 * `hasErrors` `boolean` Does the form contain any errors?
 * `pristine` `boolean` When using `sendOnlyDirtyFields`, is the form pristine?
