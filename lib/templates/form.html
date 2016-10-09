@@ -1,4 +1,8 @@
 <form v-el:form action="{{action}}" method="{{method}}" class="{{options.layout}}" @submit="submit($event)" novalidate enctype="multipart/form-data">
-  <input v-if="!ajax" v-for="val in additionalValues" type="hidden" name="{{val.name}}" value="{{val.value}}">
+
+ <div v-if="!ajax">
+  <input v-for="val in additionalValues" type="hidden" name="{{val.name}}" value="{{val.value}}"> 	
+ </div>
+
   <slot></slot>
 </form>
