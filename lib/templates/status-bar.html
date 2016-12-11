@@ -5,5 +5,5 @@
      <li v-for="error in errors"><a href="{{getLink(error)}}" @click="goToField(error.name)">{{showError(error)}}</a></li>
    </ul>
  </div>
- <p v-else>{{getForm().statusbarMessage}}<p>
+ <p v-else v-html="getForm().statusbarMessage"></p>
 </div>
