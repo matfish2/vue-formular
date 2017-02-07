@@ -103,7 +103,8 @@ exports.install = function(Vue, globalOptions) {
       reinitForm:require('./lib/methods/reinit-form'),
       registerInterfieldsRules: require('./lib/methods/register-interfields-rules'),
       registerTriggers: require('./lib/methods/register-triggers'),
-      childrenOf: require('./lib/methods/children-of')
+      childrenOf: require('./lib/methods/children-of'),
+      dispatch: require('./lib/methods/dispatch')
     }
 
   }
