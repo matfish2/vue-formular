@@ -7,6 +7,9 @@ exports.install = function(Vue, globalOptions) {
 
     template: require('./lib/templates/form.html'),
     props: {
+      name:{
+        type:String
+      },
       client:{
         type:Boolean,
         required:false,
