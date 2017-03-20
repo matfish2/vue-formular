@@ -1,1 +1,2 @@
  <input class="VF-Field--Date__date form-control" name="{{name}}" :disabled="disabled" v-model="formattedDate" placeholder="{{placeholder}}" lazy type="text">
+<button v-if="nowButton" class="btn btn-default btn-sm" type="button" @click='setNow($event)'>{{nowText}}</button>
