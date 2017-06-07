@@ -1,5 +1,5 @@
    <div v-show="shouldShow" id="{{name}}" class="VF VF-Field form-group" :class="fieldClasses">
-   <label v-if="hasLabel" class="VF-Field__label control-label" :class="getForm().labelClass" for="{{name}}">{{{label}}}</label>
+   <label v-if="hasLabel" class="VF-Field__label control-label" :class="getForm().labelClass" for="{{name}}"><span>{{{label}}}</span><small v-if="description">{{description}}</small></label>
      <div class="VF-Field__wrapper" :class="hasLabel?getForm().fieldClass:''">
       <slot name="beforeField"></slot>
       <partial :name="partial"></partial>
