@@ -114,6 +114,7 @@ exports.install = function(Vue, globalOptions) {
   Vue.component('vf-text',require('./lib/components/fields/text')());
   Vue.component('vf-email',require('./lib/components/fields/email')());
   Vue.component('vf-number',require('./lib/components/fields/number')());
+  Vue.component('vf-color',require('./lib/components/fields/color')());
   Vue.component('vf-password',require('./lib/components/fields/password')());
   Vue.component('vf-file',require('./lib/components/fields/file')());
   Vue.component('vf-textarea',require('./lib/components/fields/textarea')());
