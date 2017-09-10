@@ -1,4 +1,5 @@
 <div class="Textarea__wrapper">
+<span class="Textarea__counter" v-if="hasMax">[{{lettersCount}}/{{max}}]</span>
 <textarea id="textarea_{{name}}" lazy={{lazy}} v-model="value" :debounce="debounce" name="{{name}}" class="form-control" @change="validateRemote()" :disabled="disabled" placeholder="{{placeholder}}"></textarea>
 <button v-if="toggler" type="button" class="btn btn-default btn-xs" @click='toggle()'>{{togglerText}}</button>
 </div>
