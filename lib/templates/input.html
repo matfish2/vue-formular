@@ -1,2 +1,2 @@
-<span class="Textarea__counter" v-if="fieldType=='text' && hasMax">[{{lettersCount}}/{{max}}]</span>
+<span class="Textarea__counter" v-if="fieldType=='text' && hasMax && counter">[{{lettersCount}}/{{max}}]</span>
 <input type="{{fieldType}}" :debounce="debounce" lazy={{lazy}} name="{{name}}" v-model="value" class="form-control"  placeholder="{{placeholder}}" :disabled="disabled" @change="validateRemote()">
